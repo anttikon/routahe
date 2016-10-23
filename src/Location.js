@@ -1,4 +1,4 @@
-import {getLocations} from '../hsl-api/hsl-api'
+import {getLocations} from './hsl-api/hsl-api'
 import {head} from 'lodash'
 
 class Location {

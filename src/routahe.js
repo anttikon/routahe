@@ -1,6 +1,6 @@
 import program from 'commander'
-import Location from './lib/Location'
-import Route from './lib/Route'
+import Location from './Location'
+import Route from './Route'
 import P from 'bluebird'
 
 const action = async function(from, to) {
@@ -14,4 +14,3 @@ program
     console.log('Error with action', e)
   }))
   .parse(process.argv)
-

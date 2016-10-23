@@ -1,5 +1,5 @@
 import {bold, green, cyan, blue, red, yellow, magenta, white} from 'chalk'
-import {getRoutes} from '../hsl-api/hsl-api'
+import {getRoutes} from './hsl-api/hsl-api'
 import {head, last} from 'lodash'
 
 import {getColorByMode, formatTime, formatDuration} from './view-utils'

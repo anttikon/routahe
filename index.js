@@ -1,6 +1,4 @@
 #!/usr/bin/env node
-require('babel-register')({
-  ignore: /node_modules\/(?!routahe)/
-})
-require('babel-polyfill')
-require('./app.js')
+'use strict';
+require('babel-polyfill');
+require('./lib/routahe');
