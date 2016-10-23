@@ -1,11 +1,11 @@
-# routa
+# routahe
 This is command line [reittiopas](http://www.reittiopas.fi/en/) client for lazy atk people. 
 
 ## Usage
 Install with -g:
 ```bash
 npm install -g routahe
-routa steissi "kannistontie 2, vantaa"
+routahe steissi "kannistontie 2, vantaa"
 ```
 
 Use without -g:
