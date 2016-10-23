@@ -1,5 +1,6 @@
 import {bold, green, cyan, blue, red, yellow, magenta, white} from 'chalk'
 import moment from 'moment'
+require("moment-duration-format")
 
 function getColorByMode(mode) {
   const colorModeMap = {
@@ -18,8 +19,7 @@ function formatTime(date) {
 }
 
 function formatDuration(seconds) {
-  const duration = moment.duration(seconds * 1000)
-  return duration.hours() ? `${duration.hours()}h ${duration.minutes()}min` : `${duration.minutes()}min`
+  return moment.duration({seconds}).format("d[d] h[h] mm[min]")
 }
 
 export {getColorByMode, formatTime, formatDuration}

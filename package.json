@@ -3,7 +3,7 @@
   "version": "0.1.2",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --recursive --compilers js:babel-core/register --require babel-polyfill",
     "compile": "babel --presets es2015 -d lib/ src/",
     "prepublish": "npm run compile"
   },
@@ -21,11 +21,15 @@
     "graphqlify": "^1.0.0",
     "lodash": "^4.16.4",
     "moment": "^2.15.1",
+    "moment-duration-format": "^1.3.0",
     "request": "^2.75.0"
   },
   "devDependencies": {
     "babel-cli": "^6.16.0",
     "babel-plugin-transform-async-to-generator": "^6.16.0",
-    "babel-preset-es2015": "^6.16.0"
+    "babel-preset-es2015": "^6.16.0",
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2",
+    "sinon": "^1.17.6"
   }
 }

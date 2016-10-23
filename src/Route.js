@@ -22,6 +22,7 @@ class Route {
     if (!location.label || !location.lon || !location.lat) {
       throw new Error(`Location is missing mandatory information: ${JSON.stringify(location)}`)
     }
+    return true
   }
 
   static printSearchInfo(from, to) {
