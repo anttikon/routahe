@@ -1,6 +1,7 @@
 import {assert} from 'chai'
-import {getColorByMode, formatTime, formatDuration} from '../src/view-utils'
+import {getColorByMode, getEmojiByMode, formatTime, formatDuration} from '../src/view-utils'
 import moment from 'moment'
+import {emoji} from 'node-emoji'
 
 describe('view utils', function() {
   describe('getColorByMode', () => {
@@ -20,11 +21,9 @@ describe('view utils', function() {
       assert.equal(getColorByMode('TRAM')._styles, 'red')
     })
 
-
     it('with subway', () => {
       assert.equal(getColorByMode('SUBWAY')._styles, 'yellow')
     })
-
 
     it('with ferry', () => {
       assert.equal(getColorByMode('FERRY')._styles, 'magenta')
@@ -32,6 +31,36 @@ describe('view utils', function() {
 
     it('with unknown', () => {
       assert.equal(getColorByMode('WHATISTHIS')._styles, 'white')
+    })
+  })
+
+  describe('getEmojiByMode', () => {
+    it('with walk', () => {
+      assert.equal(getEmojiByMode('WALK'), emoji.walking)
+    })
+
+    it('with rail', () => {
+      assert.equal(getEmojiByMode('RAIL'), emoji.train)
+    })
+
+    it('with bus', () => {
+      assert.equal(getEmojiByMode('BUS'), emoji.bus)
+    })
+
+    it('with tram', () => {
+      assert.equal(getEmojiByMode('TRAM'), emoji.tram)
+    })
+
+    it('with subway', () => {
+      assert.equal(getEmojiByMode('SUBWAY'), emoji.metro)
+    })
+
+    it('with ferry', () => {
+      assert.equal(getEmojiByMode('FERRY'), emoji.ferry)
+    })
+
+    it('with unknown', () => {
+      assert.equal(getEmojiByMode('WHATISTHIS'), emoji.grey_question)
     })
   })
 
