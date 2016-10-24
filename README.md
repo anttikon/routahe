@@ -13,3 +13,8 @@ routahe steissi "kannistontie 2, vantaa"
 
 ![Usage](misc/routahe.gif)
 
+## Develop
+Use NODE_ENV=development to enable Babel Require Hook
+```bash
+NODE_ENV=development node index.js steissi "kannistontie 2, vantaa"
+```
