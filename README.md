@@ -11,7 +11,7 @@ npm install -g routahe
 routahe steissi "kannistontie 2, vantaa"
 ```
 
-![Usage](misc/routahe.gif)
+![Usage](https://raw.githubusercontent.com/anttikon/routahe/master/misc/routahe.gif)
 
 ## Develop
 Use NODE_ENV=development to enable Babel Require Hook
