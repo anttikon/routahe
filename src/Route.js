@@ -2,7 +2,7 @@ import {bold, green, cyan, blue, red, yellow, magenta, white} from 'chalk'
 import {getRoutes} from './hsl-api/hsl-api'
 import {head, last} from 'lodash'
 
-import {getColorByMode, formatTime, formatDuration} from './view-utils'
+import {getColorByMode, getEmojiByMode, formatTime, formatDuration} from './view-utils'
 
 class Route {
 
@@ -46,11 +46,12 @@ function printRouteInformation(start, end, duration) {
 
 function printLeg(leg) {
   const color = getColorByMode(leg.mode)
+  const emoji = getEmojiByMode(leg.mode)
 
   if (leg.route && leg.route.shortName) {
-    console.log(color('  | '), `${formatTime(leg.startTime)} - ${formatTime(leg.endTime)}`, color(leg.mode), bold(leg.route.shortName), `-> ${leg.to.name}`)
+    console.log(color('  | '), `${formatTime(leg.startTime)} - ${formatTime(leg.endTime)}`, emoji, color(leg.mode), bold(leg.route.shortName), `-> ${leg.to.name}`)
   } else {
-    console.log(color('  | '), `${formatTime(leg.startTime)} - ${formatTime(leg.endTime)}`, color(leg.mode), `-> ${leg.to.name}`)
+    console.log(color('  | '), `${formatTime(leg.startTime)} - ${formatTime(leg.endTime)}`, emoji, color(leg.mode), `-> ${leg.to.name}`)
   }
 }
 
