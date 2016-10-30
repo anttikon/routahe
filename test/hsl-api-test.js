@@ -8,9 +8,9 @@ describe('HSL-API', function() {
 
   describe('get locations', () => {
     it('should be able to find location information', async() => {
-      const locations = await getLocations('Steissi')
+      const locations = await getLocations('Helsingin päärautatieasema')
       const firstLocation = head(locations.features).properties
-      assert.equal(firstLocation.label, 'Steissi, Helsinki, Finland')
+      assert.equal(firstLocation.label, 'Helsingin päärautatieasema, Helsinki')
     })
 
     it('should return empty array with empyt query', async() => {
