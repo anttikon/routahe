@@ -1,10 +1,9 @@
 import program from 'commander'
 import Location from './Location'
 import Route from './Route'
-import P from 'bluebird'
 
 const action = async function(from, to) {
-  const [fromLocation, toLocation] = await P.all([new Location(from).getLocation(), new Location(to).getLocation()])
+  const [fromLocation, toLocation] = await Promise.all([new Location(from).getLocation(), new Location(to).getLocation()])
   await new Route(fromLocation, toLocation).printRoutes()
 }
 

@@ -1,17 +1,16 @@
-import P from 'bluebird'
 import {get} from 'lodash'
 import {getUrl, getGraphQlQuery} from './query-utils'
-const request = P.promisifyAll(require("request"))
+import fetch from 'node-fetch'
 
 async function getLocations(query) {
-  const url = getUrl('http://api.digitransit.fi/geocoding/v1/search', {
+  const response = await fetch(getUrl('http://api.digitransit.fi/geocoding/v1/search', {
     'text': encodeURIComponent(query),
     'boundary.rect.min_lat': 59.9,
     'boundary.rect.max_lat': 60.45,
     'boundary.rect.min_lon': 24.3,
     'boundary.rect.max_lon': 25.5
-  })
-  return (await request.getAsync({url, json: true})).body
+  }))
+  return response.json()
 }
 
 async function getRoutes(from, to) {
@@ -35,18 +34,19 @@ async function getRoutes(from, to) {
     }
   }
 
-  const {body} = await request.postAsync({
-    url: 'https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql',
-    json: getGraphQlQuery('plan',
+  const response = await fetch('https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql', {
+    method: 'POST',
+    body: JSON.stringify(getGraphQlQuery('plan',
       {
         from: {lat: from.lat, lon: from.lon},
         to: {lat: to.lat, lon: to.lon},
         numItineraries: 3
       },
-      routeProjection)
+      routeProjection)),
+    headers: {'Content-Type': 'application/json'}
   })
 
-  return get(body, 'data.plan.itineraries')
+  return get(await response.json(), 'data.plan.itineraries')
 }
 
 export {getLocations, getRoutes}
