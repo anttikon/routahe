@@ -8,7 +8,13 @@ npm install -g routahe
 
 ## Usage
 ```bash
-routahe steissi "kannistontie 2, vantaa"
+routahe kamppi "kannistontie 2, vantaa"
+```
+
+Or search for your current location using nearby wifi access points.
+
+```bash
+routahe "kannistontie 2, vantaa"
 ```
 
 ![Usage](https://raw.githubusercontent.com/anttikon/routahe/master/misc/routahe.gif)
@@ -16,5 +22,5 @@ routahe steissi "kannistontie 2, vantaa"
 ## Develop
 Use NODE_ENV=development to enable Babel Require Hook
 ```bash
-NODE_ENV=development node index.js steissi "kannistontie 2, vantaa"
+NODE_ENV=development node index.js kamppi "kannistontie 2, vantaa"
 ```
