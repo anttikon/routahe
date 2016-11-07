@@ -1,7 +1,20 @@
 {
   "name": "routahe",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "main": "index.js",
+  "license": "MIT",
+  "author": "Antti Kontoniemi",
+  "keywords": [
+    "HSL",
+    "Reittiopas"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anttikon/routahe"
+  },
+  "bugs": {
+    "url": "https://github.com/anttikon/routahe/issues"
+  },
   "scripts": {
     "test": "mocha --recursive --compilers js:babel-core/register --require babel-polyfill",
     "compile": "babel --presets es2015 -d lib/ src/",
