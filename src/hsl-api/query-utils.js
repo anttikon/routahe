@@ -18,7 +18,7 @@ function getGraphQlQuery(command, parameters, projection) {
 function getGraphQlParameters(jsonParameters = {}) {
   const parameters = JSON.stringify(jsonParameters)
   const withoutQuotes = parameters.replace(new RegExp('"', 'g'), '')
-  return `(${withoutQuotes.slice(1, -1)})`;
+  return `(${withoutQuotes.slice(1, -1)})`
 }
 
 export {getUrl, getGraphQlQuery, getGraphQlParameters}

@@ -65,8 +65,8 @@ describe('view utils', function() {
   })
 
   it('formatTime', () => {
-    assert.equal(formatTime(moment("2016-07-12 12:32:30").toDate()), '12:32')
-    assert.equal(formatTime(moment("2016-07-12 06:12:15").toDate()), '06:12')
+    assert.equal(formatTime(moment('2016-07-12 12:32:30').toDate()), '12:32')
+    assert.equal(formatTime(moment('2016-07-12 06:12:15').toDate()), '06:12')
   })
 
   describe('formatDuration', () => {

@@ -1,7 +1,7 @@
 import {gray, green, cyan, blue, yellow, magenta, white} from 'chalk'
 import moment from 'moment'
 import {emoji} from 'node-emoji'
-require("moment-duration-format")
+require('moment-duration-format')
 
 function getColorByMode(mode) {
   const colorModeMap = {
@@ -32,7 +32,7 @@ function formatTime(date) {
 }
 
 function formatDuration(seconds) {
-  return moment.duration({seconds}).format("d[d] h[h] mm[min]")
+  return moment.duration({seconds}).format('d[d] h[h] mm[min]')
 }
 
 export {getColorByMode, getEmojiByMode, formatTime, formatDuration}

@@ -1,4 +1,4 @@
-import {bold, green, cyan, blue, red, yellow, magenta, white} from 'chalk'
+import {bold} from 'chalk'
 import {getRoutes} from './hsl-api/hsl-api'
 import {head, last} from 'lodash'
 
