@@ -6,11 +6,11 @@ import {emoji} from 'node-emoji'
 describe('view utils', function() {
   describe('getColorByMode', () => {
     it('with walk', () => {
-      assert.equal(getColorByMode('WALK')._styles, 'green')
+      assert.equal(getColorByMode('WALK')._styles, 'gray')
     })
 
     it('with rail', () => {
-      assert.equal(getColorByMode('RAIL')._styles, 'cyan')
+      assert.equal(getColorByMode('RAIL')._styles, 'magenta')
     })
 
     it('with bus', () => {
@@ -18,7 +18,7 @@ describe('view utils', function() {
     })
 
     it('with tram', () => {
-      assert.equal(getColorByMode('TRAM')._styles, 'red')
+      assert.equal(getColorByMode('TRAM')._styles, 'green')
     })
 
     it('with subway', () => {
@@ -26,7 +26,7 @@ describe('view utils', function() {
     })
 
     it('with ferry', () => {
-      assert.equal(getColorByMode('FERRY')._styles, 'magenta')
+      assert.equal(getColorByMode('FERRY')._styles, 'cyan')
     })
 
     it('with unknown', () => {

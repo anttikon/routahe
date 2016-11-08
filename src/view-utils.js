@@ -1,16 +1,16 @@
-import {bold, green, cyan, blue, red, yellow, magenta, white} from 'chalk'
+import {gray, green, cyan, blue, yellow, magenta, white} from 'chalk'
 import moment from 'moment'
 import {emoji} from 'node-emoji'
 require("moment-duration-format")
 
 function getColorByMode(mode) {
   const colorModeMap = {
-    'WALK': green,
-    'RAIL': cyan,
+    'WALK': gray,
+    'RAIL': magenta,
     'BUS': blue,
-    'TRAM': red,
+    'TRAM': green,
     'SUBWAY': yellow,
-    'FERRY': magenta
+    'FERRY': cyan
   }
   return colorModeMap[mode] || white
 }
