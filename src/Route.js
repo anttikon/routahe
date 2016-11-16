@@ -32,7 +32,8 @@ class Route {
 
 function maxFieldLength(route, fieldName) {
   return route.legs.reduce((prevMax, route) => {
-    const currLength = get(route, fieldName, "").length
+    const field = get(route, fieldName, "")
+    const currLength = field && field.length
     return currLength > prevMax ? currLength : prevMax
   }, 0)
 }
@@ -58,9 +59,9 @@ function printLeg(leg, maxRouteNameLength, maxModeLength) {
   const color = getColorByMode(leg.mode)
   const emoji = getEmojiByMode(leg.mode)
 
-  const sortName = get(leg, 'route.shortName', '')
-  const shortNamePadChar = sortName.length === 0 ? '.' : ' '
-  console.log(color('  | '), `${formatTime(leg.startTime)} - ${formatTime(leg.endTime)}`, emoji, color(padEnd(leg.mode, maxModeLength)), bold(padEnd(sortName, maxRouteNameLength, shortNamePadChar)), `-> ${leg.to.name}`)
+  const shortName = get(leg, 'route.shortName', '')
+  const shortNamePadChar = (!shortName || shortName.length) === 0 ? '.' : ' '
+  console.log(color('  | '), `${formatTime(leg.startTime)} - ${formatTime(leg.endTime)}`, emoji, color(padEnd(leg.mode, maxModeLength)), bold(padEnd(shortName, maxRouteNameLength, shortNamePadChar)), `-> ${leg.to.name}`)
 }
 
 export default Route
