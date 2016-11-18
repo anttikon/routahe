@@ -1,6 +1,6 @@
 import {bold} from 'chalk'
 import {getRoutes} from './hsl-api/hsl-api'
-import {head, last} from 'lodash'
+import {head, last, get, padEnd, max} from 'lodash'
 
 import {getColorByMode, getEmojiByMode, formatTime, formatDuration} from './view-utils'
 
@@ -36,23 +36,33 @@ function printRoute(route) {
   const end = last(route.legs).endTime
 
   printRouteInformation(start, end, route.duration)
-  route.legs.forEach(printLeg)
+
+  const longestModeAndShortnameLength = max(route.legs.map(leg => getModeAndShortnameLength(leg)))
+  route.legs.forEach(leg => printLeg(leg, longestModeAndShortnameLength))
   console.log('')
+}
+
+function getModeAndShortnameLength(leg) {
+  const {mode} = leg
+  const shortName = get(leg, 'route.shortName') || ''
+  return mode.length + shortName.length
+}
+
+function getPad(leg, longestModeAndShortnameLength) {
+  const {mode} = leg
+  return longestModeAndShortnameLength - mode.length
 }
 
 function printRouteInformation(start, end, duration) {
   console.log(`${formatTime(start)} - ${formatTime(end)} (${formatDuration(duration)})`)
 }
 
-function printLeg(leg) {
+function printLeg(leg, longestModeAndShortnameLength) {
   const color = getColorByMode(leg.mode)
   const emoji = getEmojiByMode(leg.mode)
-
-  if (leg.route && leg.route.shortName) {
-    console.log(color('  | '), `${formatTime(leg.startTime)} - ${formatTime(leg.endTime)}`, emoji, color(leg.mode), bold(leg.route.shortName), `-> ${leg.to.name}`)
-  } else {
-    console.log(color('  | '), `${formatTime(leg.startTime)} - ${formatTime(leg.endTime)}`, emoji, color(leg.mode), `-> ${leg.to.name}`)
-  }
+  const shortName = get(leg, 'route.shortName')
+  const padAmount = getPad(leg, longestModeAndShortnameLength)
+  console.log(color('  | '), `${formatTime(leg.startTime)} - ${formatTime(leg.endTime)}`, emoji, color(leg.mode), bold(padEnd(shortName, padAmount, ' ')), `-> ${leg.to.name}`)
 }
 
 export default Route
