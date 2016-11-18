@@ -1,6 +1,6 @@
 import {bold} from 'chalk'
 import {getRoutes} from './hsl-api/hsl-api'
-import {head, last, get, padEnd} from 'lodash'
+import {head, last, get, padEnd, max} from 'lodash'
 
 import {getColorByMode, getEmojiByMode, formatTime, formatDuration} from './view-utils'
 
@@ -30,13 +30,6 @@ class Route {
   }
 }
 
-function maxFieldLength(route, fieldName) {
-  return route.legs.reduce((prevMax, route) => {
-    const field = get(route, fieldName, "")
-    const currLength = field && field.length
-    return currLength > prevMax ? currLength : prevMax
-  }, 0)
-}
 function printRoute(route) {
   console.log('')
   const start = head(route.legs).startTime
@@ -44,24 +37,32 @@ function printRoute(route) {
 
   printRouteInformation(start, end, route.duration)
 
-  const maxRouteNameLength = maxFieldLength(route, 'route.shortName');
-  const maxModeLength = maxFieldLength(route, 'mode');
-
-  route.legs.forEach(leg => printLeg(leg, maxRouteNameLength, maxModeLength))
+  const longestModeAndShortnameLength = max(route.legs.map(leg => getModeAndShortnameLength(leg)))
+  route.legs.forEach(leg => printLeg(leg, longestModeAndShortnameLength))
   console.log('')
+}
+
+function getModeAndShortnameLength(leg) {
+  const {mode} = leg
+  const shortName = get(leg, 'route.shortName') || ''
+  return mode.length + shortName.length
+}
+
+function getPad(leg, longestModeAndShortnameLength) {
+  const {mode} = leg
+  return longestModeAndShortnameLength - mode.length
 }
 
 function printRouteInformation(start, end, duration) {
   console.log(`${formatTime(start)} - ${formatTime(end)} (${formatDuration(duration)})`)
 }
 
-function printLeg(leg, maxRouteNameLength, maxModeLength) {
+function printLeg(leg, longestModeAndShortnameLength) {
   const color = getColorByMode(leg.mode)
   const emoji = getEmojiByMode(leg.mode)
-
-  const shortName = get(leg, 'route.shortName', '')
-  const shortNamePadChar = (!shortName || shortName.length) === 0 ? '.' : ' '
-  console.log(color('  | '), `${formatTime(leg.startTime)} - ${formatTime(leg.endTime)}`, emoji, color(padEnd(leg.mode, maxModeLength)), bold(padEnd(shortName, maxRouteNameLength, shortNamePadChar)), `-> ${leg.to.name}`)
+  const shortName = get(leg, 'route.shortName')
+  const padAmount = getPad(leg, longestModeAndShortnameLength)
+  console.log(color('  | '), `${formatTime(leg.startTime)} - ${formatTime(leg.endTime)}`, emoji, color(leg.mode), bold(padEnd(shortName, padAmount, ' ')), `-> ${leg.to.name}`)
 }
 
 export default Route
