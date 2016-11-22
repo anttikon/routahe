@@ -43,7 +43,7 @@ describe('history', function() {
     it('should write existing routes to history file', async () => {
       await history.add('Address 1', 'Address 2')
       const call = fsStub.writeFile.getCall(0)
-      assert.isOk(call.args[0].endsWith('.routahe_history'))
+      assert.isOk(call.args[0].endsWith('.routahe'))
     })
 
     it('should add new route to history', async () => {
@@ -75,7 +75,7 @@ describe('history', function() {
     it('should read existing routes from history file', async () => {
       await history.get()
       const call = fsStub.readFile.getCall(0)
-      assert.isOk(call.args[0].endsWith('.routahe_history'))
+      assert.isOk(call.args[0].endsWith('.routahe'))
     })
 
     it('should read existing routes', async () => {

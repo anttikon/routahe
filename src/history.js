@@ -1,7 +1,7 @@
 import fs from 'fs'
 import {homedir} from 'os'
 
-const HISTORY_FILE = `${homedir()}/.routahe_history`
+const HISTORY_FILE = `${homedir()}/.routahe`
 
 async function addToHistory(from, to) {
   const history = await readHistory()
