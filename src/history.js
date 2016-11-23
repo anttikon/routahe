@@ -1,11 +1,11 @@
 import fs from 'fs'
 import {homedir} from 'os'
 
-const HISTORY_FILE = `${homedir()}/.routahe`
+const ROUTAHE_CONF_FILE = `${homedir()}/.routahe`
 
 async function addToHistory(from, to) {
-  const history = await readHistory()
-  const route = history.find((route) => route.from.toLowerCase() === from.toLowerCase()
+  const conf = await readConf()
+  const route = conf.history.find((route) => route.from.toLowerCase() === from.toLowerCase()
                                      && route.to.toLowerCase() === to.toLowerCase() )
   if (route) {
     route.count += 1
@@ -17,22 +17,14 @@ async function addToHistory(from, to) {
       timestamp: Date.now(),
       count: 1
     }
-    history.push(newRoute)
+    conf.history.push(newRoute)
   }
-  return writeFileAsync(HISTORY_FILE, JSON.stringify(history))  
+  return writeFileAsync(ROUTAHE_CONF_FILE, JSON.stringify(conf))  
 }
 
-async function readHistory() {
-  try {
-    const text = await readFileAsync(HISTORY_FILE, 'utf8')
-    return JSON.parse(text)
-  } catch (err) {
-    if (err.code === 'ENOENT') {
-      return []
-    } else {
-      throw err
-    }
-  }
+async function getHistory() {
+  const conf = await readConf()
+  return conf.history
 }
 
 async function latestRoute() {
@@ -44,9 +36,24 @@ async function topRoute() {
 }
 
 async function getRouteBy(sortFunction) {
-  const history = await readHistory()
+  const history = await getHistory()
   history.sort(sortFunction)
   return history[0] || null
+}
+
+async function readConf() {
+  try {
+    const text = await readFileAsync(ROUTAHE_CONF_FILE, 'utf8')
+    return JSON.parse(text)
+  } catch (err) {
+    if (err.code === 'ENOENT') {
+      return {
+        history: []
+      }
+    } else {
+      throw err
+    }
+  }
 }
 
 async function readFileAsync(file, encoding) {
@@ -59,7 +66,7 @@ async function writeFileAsync(file, data) {
 
 export default {
   add: addToHistory,
-  get: readHistory,
+  get: getHistory,
   latestRoute,
   topRoute
 }
