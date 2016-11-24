@@ -2,12 +2,5 @@
   "plugins": [
     "transform-async-to-generator"
   ],
-  "presets": ["es2015"],
-  "env": {
-    "test": {
-      "plugins": [
-        "babel-plugin-rewire"
-      ]
-    }
-  }
+  "presets": ["es2015"]
 }

@@ -4,7 +4,7 @@ import history from '../src/history'
 import fs from 'fs'
 
 describe('history', function() {
-  let fsStub, resetFs, now, clock, conf
+  let fsStub, now, clock, conf
 
   beforeEach(() => {
     conf = {
@@ -28,16 +28,16 @@ describe('history', function() {
       }]
     }
     fsStub = {
-      readFile: sinon.spy((file, encoding, cb) => cb(null, JSON.stringify(conf))),
-      writeFile: sinon.spy((file, data, cb) => cb(null))
+      readFile: sinon.stub(fs, 'readFile', (file, encoding, cb) => cb(null, JSON.stringify(conf))),
+      writeFile: sinon.stub(fs, 'writeFile', (file, data, cb) => cb(null))
     }
-    resetFs = history.__Rewire__('fs', fsStub)
     now = Date.now()
     clock = sinon.useFakeTimers(now);
   })
 
   afterEach(() => {
-    resetFs()
+    fsStub.readFile.restore()
+    fsStub.writeFile.restore()
     clock.restore()
   })
 
@@ -108,7 +108,8 @@ describe('history', function() {
     })
 
     it('should return empty history if configuration file does not exist', async () => {
-      fsStub.readFile = (file, encoding, cb) => cb({code: 'ENOENT'})
+      fsStub.readFile.restore()
+      fsStub.readFile = sinon.stub(fs, 'readFile', (file, encoding, cb) => cb({code: 'ENOENT'}))
       const historyData = await history.get()
       assert.deepEqual(historyData, [])
     })
