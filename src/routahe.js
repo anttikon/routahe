@@ -17,7 +17,7 @@ program.on('--help', function() {
   console.log(gray('    Default from - to usage'))
   console.log('    $ routahe kamppi pasila')
   console.log('');
-  console.log(gray('    Get current location by close wifi access points'))
+  console.log(gray('    Search for your current location using nearby wifi access points.'))
   console.log('    $ routahe pasila')
   console.log('');
   console.log(gray('    Specify departure time'))
