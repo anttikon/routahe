@@ -3,9 +3,11 @@ import Route from './Route'
 import {getLocation} from './Location'
 import {parseArguments} from './argument-parser'
 import {gray} from 'chalk'
+import history from './history'
 
 const action = async function(opts) {
   const [fromLocation, toLocation] = await Promise.all([getLocation(opts.addressFrom), getLocation(opts.addressTo)])
+  history.add(fromLocation.label, toLocation.label)
   await new Route(fromLocation, toLocation, opts.dateTime, opts.arriveBy).printRoutes()
 }
 
