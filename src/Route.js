@@ -1,4 +1,4 @@
-import {bold} from 'chalk'
+import {bold, gray, cyan} from 'chalk'
 import {getRoutes} from './hsl-api/hsl-api'
 import {head, last, get, padEnd, max} from 'lodash'
 
@@ -6,16 +6,18 @@ import {getColorByMode, getEmojiByMode, formatTime, formatDuration} from './view
 
 class Route {
 
-  constructor(from, to) {
+  constructor(from, to, date, arriveBy) {
     Route.validateLocation(from)
-    Route.printSearchInfo(from, to)
+    Route.printSearchInfo(from, to, date, arriveBy)
+    this.arriveBy = arriveBy
+    this.date = date
     this.from = from
     this.to = to
   }
 
   async printRoutes() {
-    const routes = await getRoutes(this.from, this.to)
-    routes.forEach(printRoute)
+    const routes = await getRoutes(this.from, this.to, this.date, this.arriveBy)
+    routes ? routes.forEach(printRoute) : console.log('No routes found! :(')
   }
 
   static validateLocation(location) {
@@ -25,8 +27,12 @@ class Route {
     return true
   }
 
-  static printSearchInfo(from, to) {
-    console.log(bold(from.label), ' - ', bold(to.label))
+  static printSearchInfo(from, to, date, arriveBy) {
+    if (date) {
+      console.log(`${bold(from.label)} - ${bold(to.label)} | ${arriveBy ? gray('arrive') : gray('departure')} ${cyan(date.format('H:mm YYYY.MM.DD'))}`)
+    } else {
+      console.log(`${bold(from.label)} - ${bold(to.label)}`)
+    }
   }
 }
 

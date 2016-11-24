@@ -46,8 +46,10 @@ describe('query utils', function() {
     const parameters = getGraphQlParameters({
       from: {lat: 24.3, lon: 25.5},
       to: {lat: 59.9, lon: 60.45},
-      numItineraries: 3
+      numItineraries: 3,
+      date: '2016-11-13',
+      time: '1:30:00'
     })
-    assert.equal(parameters, '(from:{lat:24.3,lon:25.5},to:{lat:59.9,lon:60.45},numItineraries:3)')
+    assert.equal(parameters, '(from:{lat:24.3,lon:25.5},to:{lat:59.9,lon:60.45},numItineraries:3,date:"2016-11-13",time:"1:30:00")')
   })
 })
