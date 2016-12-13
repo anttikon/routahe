@@ -66,6 +66,12 @@ describe('argument-parser', function() {
         })
       })
 
+      it('should be able to parse arguments in addressTo format', () => {
+        argumentsEqual(parseArguments(['steissi']), {
+          addressTo: 'steissi'
+        })
+      })
+
       it('should be able to parse arguments in departureTime, addressFrom, departureDate, addressTo format', () => {
         argumentsEqual(parseArguments(['12:30', 'steissi', '1.12.', 'beissi']), {
           addressFrom: 'steissi',

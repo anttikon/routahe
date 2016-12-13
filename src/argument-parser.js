@@ -1,17 +1,18 @@
 import Moment from 'moment'
+import {assignIn} from 'lodash'
 
 exports.parseArguments = (args) => {
-  const {isTime, isDate, parseDateTime} = exports
+  const {isTime, isDate, mapAddresses, parseDateTime} = exports
   const options = args.reduce((opts, arg) => {
     if (arg && isTime(arg)) {
       opts.arriveBy = arg.startsWith('@')
       opts.time = arg.replace('@', '')
     } else if (arg && isDate(arg)) {
       opts.date = arg
-    } else if (arg && !opts.addressFrom) {
-      opts.addressFrom = arg
-    } else if (arg && opts.addressFrom && !opts.addressTo) {
-      opts.addressTo = arg
+    } else if (arg && !opts.address1) {
+      opts.address1 = arg
+    } else if (arg && opts.address1 && !opts.address2) {
+      opts.address2 = arg
     }
     return opts
   }, {})
@@ -19,8 +20,24 @@ exports.parseArguments = (args) => {
   if (options.time) {
     options.dateTime = parseDateTime(options)
   }
-  return options
+
+  return mapAddresses(options)
 }
+
+exports.mapAddresses = (options) => {
+  const opts = assignIn({}, options)
+  const {address1, address2} = opts
+  if (address1 && address2) {
+    opts.addressFrom = address1
+    opts.addressTo = address2
+  } else {
+    opts.addressTo = address1
+  }
+  delete opts.address1
+  delete opts.address2
+  return opts
+}
+
 
 exports.parseDateTime = (opts) => {
   const date = opts.date ? Moment(opts.date, ['DD.MM.YYYY', 'DD.MM.', 'DD.MM', 'DD.M.YYYY', 'DD.M.', 'DD.M', 'D.M', 'D.MM', 'D.MM.', 'D.M.YYYY', 'D.MM.YYYY'], true) : new Moment()
