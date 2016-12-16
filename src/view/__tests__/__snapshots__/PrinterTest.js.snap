@@ -1,0 +1,11 @@
+exports[`Printer should be able to print line 1`] = `
+Array [
+  "17:1313h 08min🚇 [33mSUBWAY[39m [90marrive [39m[36m17:13 14.12.2016[39m[90mdeparture [39m[36m17:13 14.12.2016[39m[36m | [39m",
+]
+`;
+
+exports[`Printer should return empty stuff if parameters empty ok 1`] = `
+Array [
+  "a",
+]
+`;

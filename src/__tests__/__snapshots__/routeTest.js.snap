@@ -1,0 +1,201 @@
+exports[`Route action 1`] = `
+Array [
+  Array [
+    "[1mKolmas linja 3, Helsinki[22m - [1mKannistontie 2, Vantaa[22m | [90mdeparture [39m[36m13:32 12.12.2016[39m",
+  ],
+  Array [
+    "",
+  ],
+  Array [
+    "13:32 - 14:30 58min",
+  ],
+  Array [
+    "[90m  |  [39m13:32 - 13:34 🚶 [90mWALK[39m [1m   [22m -> Haapaniemi",
+  ],
+  Array [
+    "[34m  |  [39m13:35 - 13:41 🚌 [34mBUS[39m [1m72  [22m -> Rautatientori",
+  ],
+  Array [
+    "[90m  |  [39m13:41 - 13:46 🚶 [90mWALK[39m [1m   [22m -> Helsinki",
+  ],
+  Array [
+    "[35m  |  [39m13:51 - 14:15 🚋 [35mRAIL[39m [1mP  [22m -> Kivistö",
+  ],
+  Array [
+    "[90m  |  [39m14:15 - 14:16 🚶 [90mWALK[39m [1m   [22m -> Kivistön asema",
+  ],
+  Array [
+    "[34m  |  [39m14:27 - 14:29 🚌 [34mBUS[39m [1m443K[22m -> Sälpäkuja",
+  ],
+  Array [
+    "[90m  |  [39m14:29 - 14:30 🚶 [90mWALK[39m [1m   [22m -> Destination",
+  ],
+  Array [
+    "",
+  ],
+  Array [
+    "",
+  ],
+  Array [
+    "13:33 - 14:42 1h 08min",
+  ],
+  Array [
+    "[90m  |  [39m13:33 - 13:35 🚶 [90mWALK[39m [1m [22m -> Haapaniemi",
+  ],
+  Array [
+    "[34m  |  [39m13:36 - 13:42 🚌 [34mBUS[39m [1m71[22m -> Rautatientori",
+  ],
+  Array [
+    "[90m  |  [39m13:42 - 13:44 🚶 [90mWALK[39m [1m [22m -> Helsinki",
+  ],
+  Array [
+    "[35m  |  [39m13:51 - 14:25 🚋 [35mRAIL[39m [1mI[22m -> Kivistö",
+  ],
+  Array [
+    "[90m  |  [39m14:25 - 14:42 🚶 [90mWALK[39m [1m [22m -> Destination",
+  ],
+  Array [
+    "",
+  ],
+  Array [
+    "",
+  ],
+  Array [
+    "13:40 - 14:42 1h 01min",
+  ],
+  Array [
+    "[90m  |  [39m13:40 - 13:43 🚶 [90mWALK[39m [1m [22m -> Kallion virastotalo",
+  ],
+  Array [
+    "[34m  |  [39m13:44 - 13:58 🚌 [34mBUS[39m [1m23[22m -> Pasilan asema",
+  ],
+  Array [
+    "[90m  |  [39m13:58 - 13:59 🚶 [90mWALK[39m [1m [22m -> Pasila",
+  ],
+  Array [
+    "[35m  |  [39m14:05 - 14:25 🚋 [35mRAIL[39m [1mP[22m -> Kivistö",
+  ],
+  Array [
+    "[90m  |  [39m14:25 - 14:42 🚶 [90mWALK[39m [1m [22m -> Destination",
+  ],
+  Array [
+    "",
+  ],
+]
+`;
+
+exports[`Route action arrive by 1`] = `
+Array [
+  Array [
+    "[1mSuomenlinna, Helsinki[22m - [1mRukatunturintie 2, Helsinki[22m | [90marrive [39m[36m13:32 01.12.2016[39m",
+  ],
+  Array [
+    "",
+  ],
+  Array [
+    "12:15 - 13:30 1h 14min",
+  ],
+  Array [
+    "[90m  |  [39m12:15 - 12:19 🚶 [90mWALK[39m [1m   [22m -> Suomenlinna, päälait",
+  ],
+  Array [
+    "[36m  |  [39m12:20 - 12:35 ⛴ [36mFERRY[39m [1m19[22m -> Kauppatori",
+  ],
+  Array [
+    "[90m  |  [39m12:35 - 12:39 🚶 [90mWALK[39m [1m   [22m -> Kauppatori",
+  ],
+  Array [
+    "[32m  |  [39m12:50 - 12:54 🚊 [32mTRAM[39m [1m2  [22m -> Mikonkatu",
+  ],
+  Array [
+    "[90m  |  [39m12:54 - 12:59 🚶 [90mWALK[39m [1m   [22m -> Helsingin yliopisto",
+  ],
+  Array [
+    "[33m  |  [39m13:02 - 13:20 🚇 [33mSUBWAY[39m [1m [22m -> Mellunmäki",
+  ],
+  Array [
+    "[90m  |  [39m13:20 - 13:22 🚶 [90mWALK[39m [1m   [22m -> Mellunmäki(M)",
+  ],
+  Array [
+    "[34m  |  [39m13:25 - 13:29 🚌 [34mBUS[39m [1m97  [22m -> Kaunispääntie",
+  ],
+  Array [
+    "[90m  |  [39m13:29 - 13:30 🚶 [90mWALK[39m [1m   [22m -> Destination",
+  ],
+  Array [
+    "",
+  ],
+  Array [
+    "",
+  ],
+  Array [
+    "11:35 - 12:49 1h 13min",
+  ],
+  Array [
+    "[90m  |  [39m11:35 - 11:39 🚶 [90mWALK[39m [1m   [22m -> Suomenlinna, päälait",
+  ],
+  Array [
+    "[36m  |  [39m11:40 - 11:55 ⛴ [36mFERRY[39m [1m19[22m -> Kauppatori",
+  ],
+  Array [
+    "[90m  |  [39m11:55 - 11:59 🚶 [90mWALK[39m [1m   [22m -> Ritarihuone",
+  ],
+  Array [
+    "[32m  |  [39m12:04 - 12:08 🚊 [32mTRAM[39m [1m4  [22m -> Ylioppilastalo",
+  ],
+  Array [
+    "[90m  |  [39m12:08 - 12:12 🚶 [90mWALK[39m [1m   [22m -> Rautatientori",
+  ],
+  Array [
+    "[33m  |  [39m12:15 - 12:35 🚇 [33mSUBWAY[39m [1m [22m -> Mellunmäki",
+  ],
+  Array [
+    "[90m  |  [39m12:35 - 12:38 🚶 [90mWALK[39m [1m   [22m -> Mellunmäki (M)",
+  ],
+  Array [
+    "[34m  |  [39m12:43 - 12:47 🚌 [34mBUS[39m [1m560 [22m -> Fallpakka",
+  ],
+  Array [
+    "[90m  |  [39m12:47 - 12:49 🚶 [90mWALK[39m [1m   [22m -> Destination",
+  ],
+  Array [
+    "",
+  ],
+  Array [
+    "",
+  ],
+  Array [
+    "10:35 - 11:49 1h 13min",
+  ],
+  Array [
+    "[90m  |  [39m10:35 - 10:39 🚶 [90mWALK[39m [1m   [22m -> Suomenlinna, päälait",
+  ],
+  Array [
+    "[36m  |  [39m10:40 - 10:55 ⛴ [36mFERRY[39m [1m19[22m -> Kauppatori",
+  ],
+  Array [
+    "[90m  |  [39m10:55 - 10:59 🚶 [90mWALK[39m [1m   [22m -> Ritarihuone",
+  ],
+  Array [
+    "[32m  |  [39m11:04 - 11:08 🚊 [32mTRAM[39m [1m4  [22m -> Ylioppilastalo",
+  ],
+  Array [
+    "[90m  |  [39m11:08 - 11:12 🚶 [90mWALK[39m [1m   [22m -> Rautatientori",
+  ],
+  Array [
+    "[33m  |  [39m11:15 - 11:35 🚇 [33mSUBWAY[39m [1m [22m -> Mellunmäki",
+  ],
+  Array [
+    "[90m  |  [39m11:35 - 11:38 🚶 [90mWALK[39m [1m   [22m -> Mellunmäki (M)",
+  ],
+  Array [
+    "[34m  |  [39m11:43 - 11:47 🚌 [34mBUS[39m [1m560 [22m -> Fallpakka",
+  ],
+  Array [
+    "[90m  |  [39m11:47 - 11:49 🚶 [90mWALK[39m [1m   [22m -> Destination",
+  ],
+  Array [
+    "",
+  ],
+]
+`;

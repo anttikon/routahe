@@ -1,0 +1,43 @@
+exports[`location should fetch location by wifi if query is empty 1`] = `
+Array [
+  Object {
+    "bbox": Array [
+      24.940331,
+      60.170712,
+      24.943317,
+      60.172866,
+    ],
+    "geometry": Object {
+      "coordinates": Array [
+        24.941498,
+        60.171457,
+      ],
+      "type": "Point",
+    },
+    "properties": Object {
+      "accuracy": "point",
+      "confidence": 1,
+      "country": "Suomi",
+      "country_a": "FIN",
+      "country_gid": "whosonfirst:country:85633143",
+      "gid": "openstreetmap:venue:way:122595198",
+      "id": "way:122595198",
+      "label": "Helsingin päärautatieasema, Helsinki",
+      "layer": "venue",
+      "localadmin": "Helsinki",
+      "localadmin_gid": "whosonfirst:localadmin:907199715",
+      "locality": "Helsinki",
+      "locality_gid": "whosonfirst:locality:101748417",
+      "name": "Helsingin päärautatieasema",
+      "neighbourhood": "Kluuvi",
+      "neighbourhood_gid": "whosonfirst:neighbourhood:85898847",
+      "postalcode": "00100",
+      "region": "Uusimaa",
+      "region_gid": "whosonfirst:region:85683067",
+      "source": "openstreetmap",
+      "source_id": "way:122595198",
+    },
+    "type": "Feature",
+  },
+]
+`;
