@@ -1,4 +1,4 @@
-import {getLocationByQuery} from './hsl-api/hsl-api'
-import {getLocationByWifi} from './WifiLocation'
+import {getLocationByQuery} from './hslLocation'
+import {getLocationByWifi} from './wifiLocation'
 
 exports.getLocation = (searchTerm) => searchTerm ? getLocationByQuery(searchTerm) : getLocationByWifi()

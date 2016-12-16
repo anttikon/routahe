@@ -1,5 +1,3 @@
-import {get} from 'lodash'
-import {getUrl, getGraphQlQuery, getQueryJson, getRouteProjection} from './query-utils'
 import fetch from 'node-fetch'
 import {head} from 'lodash'
 
@@ -28,14 +26,10 @@ async function getLocationByQuery(query) {
   }
 }
 
-async function getRoutes(from, to, date, arriveBy) {
-  const response = await fetch('https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql', {
-    method: 'POST',
-    body: JSON.stringify(getGraphQlQuery('plan', getQueryJson(from, to, date, arriveBy), getRouteProjection())),
-    headers: {'Content-Type': 'application/json'}
-  })
-
-  return get(await response.json(), 'data.plan.itineraries')
+function getUrl(api, params) {
+  const urlParams = Object.keys(params).map(key => `${key}=${params[key]}`).join('&')
+  return `${api}?${urlParams}`
 }
 
-export {getHslLocations, getLocationByQuery, getRoutes}
+
+export {getHslLocations, getLocationByQuery}
