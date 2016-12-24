@@ -1,18 +1,16 @@
 exports[`HSL-API should be able to get route 1`] = `
 Array [
   Object {
-    "duration": 3117,
+    "duration": 3057,
     "legs": Array [
       Object {
-        "distance": 743.0129999999998,
-        "duration": 646,
-        "endTime": 1481729459000,
+        "distance": 743.0159999999998,
+        "duration": 645,
         "from": Object {
           "name": "Origin",
         },
         "mode": "WALK",
         "route": null,
-        "startTime": 1481728813000,
         "to": Object {
           "name": "Helsinki",
         },
@@ -20,7 +18,6 @@ Array [
       Object {
         "distance": 17312.512924842842,
         "duration": 1440,
-        "endTime": 1481730900000,
         "from": Object {
           "name": "Helsinki",
         },
@@ -28,21 +25,18 @@ Array [
         "route": Object {
           "shortName": "P",
         },
-        "startTime": 1481729460000,
         "to": Object {
           "name": "Kivistö",
         },
       },
       Object {
-        "distance": 1258.6750000000002,
-        "duration": 1029,
-        "endTime": 1481731930000,
+        "distance": 1200.5520000000001,
+        "duration": 970,
         "from": Object {
           "name": "Kivistö",
         },
         "mode": "WALK",
         "route": null,
-        "startTime": 1481730901000,
         "to": Object {
           "name": "Destination",
         },
@@ -50,48 +44,68 @@ Array [
     ],
   },
   Object {
-    "duration": 3343,
+    "duration": 2734,
     "legs": Array [
       Object {
-        "distance": 468.127,
-        "duration": 383,
-        "endTime": 1481729399000,
+        "distance": 743.0159999999998,
+        "duration": 645,
         "from": Object {
           "name": "Origin",
         },
         "mode": "WALK",
         "route": null,
-        "startTime": 1481729016000,
         "to": Object {
-          "name": "Hki linja-autoasema",
+          "name": "Helsinki",
         },
       },
       Object {
-        "distance": 17452.41190604001,
-        "duration": 1680,
-        "endTime": 1481731080000,
+        "distance": 17312.512924842842,
+        "duration": 1440,
         "from": Object {
-          "name": "Hki linja-autoasema",
+          "name": "Helsinki",
+        },
+        "mode": "RAIL",
+        "route": Object {
+          "shortName": "P",
+        },
+        "to": Object {
+          "name": "Kivistö",
+        },
+      },
+      Object {
+        "distance": 71.361,
+        "duration": 57,
+        "from": Object {
+          "name": "Kivistö",
+        },
+        "mode": "WALK",
+        "route": null,
+        "to": Object {
+          "name": "Kivistön asema",
+        },
+      },
+      Object {
+        "distance": 1062.0804831595224,
+        "duration": 180,
+        "from": Object {
+          "name": "Kivistön asema",
         },
         "mode": "BUS",
         "route": Object {
-          "shortName": "455",
+          "shortName": "433",
         },
-        "startTime": 1481729400000,
         "to": Object {
-          "name": "Keimola",
+          "name": "Liusketie",
         },
       },
       Object {
-        "distance": 1563.4159999999997,
-        "duration": 1278,
-        "endTime": 1481732359000,
+        "distance": 205.883,
+        "duration": 167,
         "from": Object {
-          "name": "Keimola",
+          "name": "Liusketie",
         },
         "mode": "WALK",
         "route": null,
-        "startTime": 1481731081000,
         "to": Object {
           "name": "Destination",
         },
@@ -99,48 +113,42 @@ Array [
     ],
   },
   Object {
-    "duration": 3117,
+    "duration": 3774,
     "legs": Array [
       Object {
-        "distance": 743.0129999999998,
-        "duration": 646,
-        "endTime": 1481730059000,
+        "distance": 897.4159999999999,
+        "duration": 764,
         "from": Object {
           "name": "Origin",
         },
         "mode": "WALK",
         "route": null,
-        "startTime": 1481729413000,
         "to": Object {
           "name": "Helsinki",
         },
       },
       Object {
-        "distance": 17312.512924842842,
-        "duration": 1440,
-        "endTime": 1481731500000,
+        "distance": 30410.431214842498,
+        "duration": 2040,
         "from": Object {
           "name": "Helsinki",
         },
         "mode": "RAIL",
         "route": Object {
-          "shortName": "P",
+          "shortName": "I",
         },
-        "startTime": 1481730060000,
         "to": Object {
           "name": "Kivistö",
         },
       },
       Object {
-        "distance": 1258.6750000000002,
-        "duration": 1029,
-        "endTime": 1481732530000,
+        "distance": 1198.9080000000001,
+        "duration": 968,
         "from": Object {
           "name": "Kivistö",
         },
         "mode": "WALK",
         "route": null,
-        "startTime": 1481731501000,
         "to": Object {
           "name": "Destination",
         },
@@ -153,18 +161,16 @@ Array [
 exports[`HSL-API should be able to get route with arriveBy 1`] = `
 Array [
   Object {
-    "duration": 3117,
+    "duration": 3057,
     "legs": Array [
       Object {
-        "distance": 743.0129999999998,
-        "duration": 646,
-        "endTime": 1481725859000,
+        "distance": 743.0159999999998,
+        "duration": 645,
         "from": Object {
           "name": "Origin",
         },
         "mode": "WALK",
         "route": null,
-        "startTime": 1481725213000,
         "to": Object {
           "name": "Helsinki",
         },
@@ -172,7 +178,6 @@ Array [
       Object {
         "distance": 17312.512924842842,
         "duration": 1440,
-        "endTime": 1481727300000,
         "from": Object {
           "name": "Helsinki",
         },
@@ -180,21 +185,18 @@ Array [
         "route": Object {
           "shortName": "P",
         },
-        "startTime": 1481725860000,
         "to": Object {
           "name": "Kivistö",
         },
       },
       Object {
-        "distance": 1257.7230000000002,
-        "duration": 1029,
-        "endTime": 1481728330000,
+        "distance": 1199.6000000000001,
+        "duration": 970,
         "from": Object {
           "name": "Kivistö",
         },
         "mode": "WALK",
         "route": null,
-        "startTime": 1481727301000,
         "to": Object {
           "name": "Destination",
         },
@@ -202,48 +204,42 @@ Array [
     ],
   },
   Object {
-    "duration": 3117,
+    "duration": 2986,
     "legs": Array [
       Object {
-        "distance": 743.0129999999998,
-        "duration": 646,
-        "endTime": 1481725259000,
+        "distance": 468.127,
+        "duration": 383,
         "from": Object {
           "name": "Origin",
         },
         "mode": "WALK",
         "route": null,
-        "startTime": 1481724613000,
         "to": Object {
-          "name": "Helsinki",
+          "name": "Hki linja-autoasema",
         },
       },
       Object {
-        "distance": 17312.512924842842,
-        "duration": 1440,
-        "endTime": 1481726700000,
+        "distance": 17452.411906026977,
+        "duration": 1320,
         "from": Object {
-          "name": "Helsinki",
+          "name": "Hki linja-autoasema",
         },
-        "mode": "RAIL",
+        "mode": "BUS",
         "route": Object {
-          "shortName": "P",
+          "shortName": "485",
         },
-        "startTime": 1481725260000,
         "to": Object {
-          "name": "Kivistö",
+          "name": "Keimola",
         },
       },
       Object {
-        "distance": 1257.7230000000002,
-        "duration": 1029,
-        "endTime": 1481727730000,
+        "distance": 1561.0849999999996,
+        "duration": 1281,
         "from": Object {
-          "name": "Kivistö",
+          "name": "Keimola",
         },
         "mode": "WALK",
         "route": null,
-        "startTime": 1481726701000,
         "to": Object {
           "name": "Destination",
         },
@@ -251,48 +247,42 @@ Array [
     ],
   },
   Object {
-    "duration": 3834,
+    "duration": 3286,
     "legs": Array [
       Object {
-        "distance": 897.4499999999999,
-        "duration": 765,
-        "endTime": 1481725259000,
+        "distance": 468.127,
+        "duration": 383,
         "from": Object {
           "name": "Origin",
         },
         "mode": "WALK",
         "route": null,
-        "startTime": 1481724494000,
         "to": Object {
-          "name": "Helsinki",
+          "name": "Hki linja-autoasema",
         },
       },
       Object {
-        "distance": 30410.431214842498,
-        "duration": 2040,
-        "endTime": 1481727300000,
+        "distance": 17452.411906026977,
+        "duration": 1620,
         "from": Object {
-          "name": "Helsinki",
+          "name": "Hki linja-autoasema",
         },
-        "mode": "RAIL",
+        "mode": "BUS",
         "route": Object {
-          "shortName": "I",
+          "shortName": "456",
         },
-        "startTime": 1481725260000,
         "to": Object {
-          "name": "Kivistö",
+          "name": "Keimola",
         },
       },
       Object {
-        "distance": 1256.23,
-        "duration": 1027,
-        "endTime": 1481728328000,
+        "distance": 1561.0849999999996,
+        "duration": 1281,
         "from": Object {
-          "name": "Kivistö",
+          "name": "Keimola",
         },
         "mode": "WALK",
         "route": null,
-        "startTime": 1481727301000,
         "to": Object {
           "name": "Destination",
         },
