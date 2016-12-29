@@ -1,7 +1,6 @@
 import sinon from 'sinon'
 
-import {validateLocation, action} from '../route'
-import {parseArguments} from '../argumentParser'
+import {validateLocation} from '../route'
 
 describe('Route', function() {
 
@@ -27,18 +26,6 @@ describe('Route', function() {
     it('should work if route does have label, lon and lat', () => {
       expect(validateLocation({label: 'Steissi', lon: 12, lat: 32})).toBe(true)
     })
-  })
-
-  it('action', async() => {
-    await action(parseArguments(['Kolmas linja 3, Helsinki', 'kannistontie 2, vantaa', '12.12.2016', '13:32']))
-    const args = console.log.getCalls().map(call => call.args)
-    expect(args).toMatchSnapshot()
-  })
-
-  it('action arrive by', async() => {
-    await action(parseArguments(['Suomenlinna, Helsinki', 'Rukatunturintie 2, Helsinki', '1.12.2016', '@13:32']))
-    const args = console.log.getCalls().map(call => call.args)
-    expect(args).toMatchSnapshot()
   })
 
 })
