@@ -121,12 +121,12 @@ describe('argument parser', function() {
     })
 
     it('should bea able to parse DD.M with mm:HH', () => {
-      now.set({'year': 2016, 'month': 0, 'date': 24, 'hour': 12, 'minute': 30})
+      now.set({'year': now.year(), 'month': 0, 'date': 24, 'hour': 12, 'minute': 30})
       expect(parseDateTime({date: '24.1', time: '12:30'}).format(dateTimeFormat)).toBe(now.format(dateTimeFormat))
     })
 
     it('should be able to parse DD.M. with MM:HH', () => {
-      now.set({'year': 2016, 'month': 0, 'date': 24, 'hour': 12, 'minute': 30})
+      now.set({'year': now.year(), 'month': 0, 'date': 24, 'hour': 12, 'minute': 30})
       expect(parseDateTime({date: '24.1.', time: '12:30'}).format(dateTimeFormat)).toBe(now.format(dateTimeFormat))
     })
 
