@@ -1,5 +1,5 @@
 import program from 'commander'
-import {action} from './route'
+import {action} from './Route'
 import {parseArguments} from './argumentParser'
 import {gray} from 'chalk'
 
