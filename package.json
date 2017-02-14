@@ -20,7 +20,7 @@
     "watch": "jest src/** --watch",
     "coverage": "jest src/** --coverage",
     "compile": "babel --presets es2015 -d lib/ src/",
-    "eslint": "eslint .",
+    "eslint": "eslint . --ext .js",
     "prepublish": "npm run compile"
   },
   "bin": {
