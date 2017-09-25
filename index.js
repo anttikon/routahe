@@ -2,13 +2,13 @@
 'use strict'
 require('babel-polyfill')
 
-process.env.NODE_ENV === 'development' ? development() : prodution()
+process.env.NODE_ENV === 'development' ? development() : production()
 
 function development() {
   require('babel-register')
   require('./src/routahe')
 }
 
-function prodution() {
+function production() {
   require('./lib/routahe')
 }
