@@ -1,6 +1,6 @@
 {
   "name": "routahe",
-  "version": "0.2.9",
+  "version": "0.2.10",
   "main": "index.js",
   "license": "MIT",
   "author": "Antti Kontoniemi",
@@ -27,6 +27,7 @@
     "build/"
   ],
   "dependencies": {
+    "babel-plugin-transform-runtime": "^6.23.0",
     "chalk": "^2.1.0",
     "commander": "^2.11.0",
     "graphqlify": "^1.1.0",
@@ -39,7 +40,6 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.0"
   }
 }
