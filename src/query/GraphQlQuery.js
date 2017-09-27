@@ -1,10 +1,10 @@
 import graphqlify from 'graphqlify'
-import {values} from 'lodash'
+import { values } from 'lodash'
 import fetch from 'node-fetch'
 
 class GraphQlQuery {
   constructor(opts = {}) {
-    const {url, command, schema} = opts
+    const { url, command, schema } = opts
     if (!url) {
       throw new Error('Cannot initialize Schema without url')
     } else if (!command) {
@@ -21,8 +21,8 @@ class GraphQlQuery {
     const options = this.preProcess ? this.preProcess(opts) : opts
     const response = await fetch(this.url, {
       method: 'POST',
-      body: JSON.stringify(this._createQuery(options)),
-      headers: {'Content-Type': 'application/json'}
+      body: JSON.stringify(this.createQuery(options)),
+      headers: { 'Content-Type': 'application/json' }
     })
 
     return this.postProcess ? this.postProcess(await response.json()) : await response.json()
@@ -37,13 +37,13 @@ class GraphQlQuery {
     return `(${withoutQuotes.slice(1, -1)})`
   }
 
-  _createQuery(parameters) {
+  createQuery(parameters) {
     const graphQlQuery = {
       command: this.command,
       parameters: GraphQlQuery.transformJsonParameters(parameters),
       projection: graphqlify(this.schema)
     }
-    return {query: `{${values(graphQlQuery).join('')}}`}
+    return { query: `{${values(graphQlQuery).join('')}}` }
   }
 }
 

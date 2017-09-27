@@ -1,5 +1,5 @@
 import GraphQlQuery from './GraphQlQuery'
-import {get, extend} from 'lodash'
+import { get } from 'lodash'
 
 class RouteQuery extends GraphQlQuery {
   constructor() {
@@ -17,9 +17,9 @@ class RouteQuery extends GraphQlQuery {
                 duration: {},
                 distance: {},
                 mode: {},
-                from: {fields: {name: {}}},
-                to: {fields: {name: {}}},
-                route: {fields: {shortName: {}}}
+                from: { fields: { name: {} } },
+                to: { fields: { name: {} } },
+                route: { fields: { shortName: {} } }
               }
             }
           }
@@ -28,19 +28,20 @@ class RouteQuery extends GraphQlQuery {
     })
   }
 
-  preProcess({from, to, date, arriveBy}) {
+  preProcess({ from, to, dateTime, arriveBy }) {
     const queryJson = {
-      from: {lat: from.lat, lon: from.lon},
-      to: {lat: to.lat, lon: to.lon},
+      from: { lat: from.lat, lon: from.lon },
+      to: { lat: to.lat, lon: to.lon },
       numItineraries: 3
     }
 
-    if (date) {
-      extend(queryJson, {
-        date: date.format('YYYY-MM-DD'),
-        time: date.format('HH:mm'),
+    if (dateTime) {
+      const dateQuery = {
+        date: dateTime.format('YYYY-MM-DD'),
+        time: dateTime.format('HH:mm'),
         arriveBy
-      })
+      }
+      return { ...queryJson, ...dateQuery }
     }
     return queryJson
   }
