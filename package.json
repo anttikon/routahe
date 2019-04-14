@@ -1,6 +1,6 @@
 {
   "name": "routahe",
-  "version": "0.2.10",
+  "version": "0.2.11",
   "main": "index.js",
   "license": "MIT",
   "author": "Antti Kontoniemi",
@@ -27,19 +27,21 @@
     "build/"
   ],
   "dependencies": {
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "chalk": "^2.1.0",
-    "commander": "^2.11.0",
+    "@babel/runtime": "^7.4.3",
+    "chalk": "^2.4.2",
+    "commander": "^2.20.0",
     "graphqlify": "^1.1.0",
-    "lodash": "^4.17.4",
-    "moment": "^2.18.1",
-    "node-emoji": "^1.8.1",
-    "node-fetch": "^1.7.3",
-    "pad": "^1.1.0"
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0",
+    "node-emoji": "^1.10.0",
+    "node-fetch": "^2.3.0",
+    "pad": "^2.3.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.6.0"
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/node": "^7.2.2",
+    "@babel/plugin-transform-runtime": "^7.4.3",
+    "@babel/preset-env": "^7.4.3"
   }
 }
