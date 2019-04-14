@@ -33,5 +33,5 @@ routahe kamppi "kannistontie 2, vantaa" 5:30 24.12.2016
 
 ## Develop
 ```bash
-yarn dev kamppi pasila
+npm run dev kamppi pasila
 ```
