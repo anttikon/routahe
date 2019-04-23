@@ -4,7 +4,7 @@ This is a command line [reittiopas](http://www.reittiopas.fi/en/) client for laz
 
 ![](https://raw.githubusercontent.com/anttikon/routahe/master/misc/routahe.png)
 
-<p align="center">
+<p>
   <a href="https://www.npmjs.com/package/routahe?activeTab=dependencies">
     <img alt="Dependencies" src="https://img.shields.io/david/anttikon/routahe.svg"></a>
   <a href="#badge">
