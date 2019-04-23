@@ -1,74 +1,74 @@
 import moment from 'moment'
-import { maxBy, minBy } from 'lodash'
-import RouteQuery from './query/RouteQuery'
-import { emoji } from 'node-emoji'
-import { bold, gray, green, cyan, blue, yellow, magenta, white } from 'chalk'
-import Table from './Table'
+import { maxBy, minBy, get } from 'lodash'
+import { gray, green, cyan, blueBright, yellow, magenta } from 'chalk'
+import Table from 'cli-table'
 
-const emojis = {
-  'WALK': emoji.walking,
-  'RAIL': emoji.train,
-  'BUS': emoji.bus,
-  'TRAM': emoji.tram,
-  'SUBWAY': emoji.metro,
-  'FERRY': emoji.ferry
+const spacer = '  |'
+
+const tableStyle = {
+  chars: {
+    top: '',
+    'top-mid': '',
+    'top-left': '',
+    'top-right': '',
+    bottom: '',
+    'bottom-mid': '',
+    'bottom-left': '',
+    'bottom-right': '',
+    left: '',
+    'left-mid': '',
+    mid: '',
+    'mid-mid': '',
+    right: '',
+    'right-mid': '',
+    middle: ' ',
+  },
+  style: { 'padding-left': 0, 'padding-right': 0 },
 }
 
-function createTable(header) {
-  return new Table({
-    header,
-    columns: ['spacer', 'time', 'mode', 'shortName', 'arrow', 'destination'],
-    columnModifiers: [
-      { condition: (row) => true, modifier: bold, columns: ['shortName'] },
-      { condition: (row) => row.mode.includes('WALK'), modifier: gray, columns: ['spacer', 'mode'] },
-      { condition: (row) => row.mode.includes('RAIL'), modifier: magenta, columns: ['spacer', 'mode'] },
-      { condition: (row) => row.mode.includes('BUS'), modifier: blue, columns: ['spacer', 'mode'] },
-      { condition: (row) => row.mode.includes('TRAM'), modifier: green, columns: ['spacer', 'mode'] },
-      { condition: (row) => row.mode.includes('SUBWAY'), modifier: yellow, columns: ['spacer', 'mode'] },
-      { condition: (row) => row.mode.includes('FERRY'), modifier: cyan, columns: ['spacer', 'mode'] },
-    ]
-  })
+export const getRowProps = mode => {
+  switch (mode) {
+    case 'WALK':
+      return { emoji: String.fromCodePoint(0x1f6b6), color: gray, name: mode }
+    case 'RAIL':
+      return { emoji: String.fromCodePoint(0x1f685), color: magenta, name: mode }
+    case 'BUS':
+      return { emoji: String.fromCodePoint(0x1f68c), color: blueBright, name: mode }
+    case 'TRAM':
+      return { emoji: String.fromCodePoint(0x1f683), color: green, name: mode }
+    case 'SUBWAY':
+      return { emoji: String.fromCodePoint(0x1f687), color: yellow, name: 'METRO' }
+    case 'FERRY':
+      return { emoji: String.fromCodePoint(0x1f6a2), color: cyan, name: mode }
+    default:
+      return { emoji: String.fromCodePoint(0x1f937), color: value => value, name: mode }
+  }
 }
 
-export const fetchRoutes = (from, to, dateTime, arriveBy) => new RouteQuery().fetch({ from, to, dateTime, arriveBy })
-
-export const routeToTable = (route) => {
+export const getRouteHeaderRow = route => {
   const startTime = moment(minBy(route.legs, 'startTime').startTime)
   const endTime = moment(maxBy(route.legs, 'endTime').endTime)
 
-  const header = `\n${startTime.format('HH:mm')} - ${endTime.format('HH:mm')} ${endTime.diff(startTime, 'minutes')}min`
-  const table = createTable(header)
-
-  route.legs.forEach(leg => {
-    const shortName = leg.route && leg.route.shortName ? leg.route.shortName : ''
-    table.addRow({
-      spacer: '  |',
-      time: `${moment(leg.startTime).format('HH:mm')} - ${moment(leg.endTime).format('HH:mm')}`,
-      mode: `${emojis[leg.mode]} ${leg.mode}`,
-      shortName: shortName,
-      arrow: '->',
-      destination: leg.to.name
-    })
-  })
-
-  return table
+  return `\n${startTime.format('HH:mm')} - ${endTime.format('HH:mm')} ${endTime.diff(startTime, 'minutes')}min`
 }
 
-export const printHelp = () => {
-  console.log('  Examples:')
-  console.log('')
-  console.log(gray('    Default from - to usage'))
-  console.log('    $ routahe kamppi pasila')
-  console.log('')
-  console.log(gray('    Specify departure time'))
-  console.log('    $ routahe kamppi pasila 5:30')
-  console.log('')
-  console.log(gray('    Specify arrival time with @'))
-  console.log('    $ routahe kamppi pasila @12:30')
-  console.log('')
-  console.log(gray('    Specify date with time'))
-  console.log('    $ routahe kamppi pasila 12:30 24.12.')
-  console.log('')
+export const getRowByLeg = leg => {
+  const { color, emoji, name } = getRowProps(leg.mode)
+
+  return [
+    color(spacer),
+    `${moment(leg.startTime).format('HH:mm')} - ${moment(leg.endTime).format('HH:mm')}`,
+    `${emoji} ${color(name)}`,
+    get(leg, 'route.shortName', ''),
+    '->',
+    leg.to.name,
+  ]
 }
 
-export const printFromTo = (addressFrom, addressTo) => console.log(bold(`${addressFrom.label} ${gray('->')} ${addressTo.label}`))
+export const getRouteRows = route => {
+  const table = new Table(tableStyle)
+  route.legs.forEach(leg => table.push(getRowByLeg(leg)))
+  return table.toString()
+}
+
+export const getTripRow = (addressFrom, addressTo) => `${addressFrom.label} ${gray('->')} ${addressTo.label}`

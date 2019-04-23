@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getRouteHeaderRow should return route header row 1`] = `
+"
+22:01 - 22:56 54min"
+`;
+
+exports[`getRouteRows should return route segments as rows 1`] = `
+"[90m  |[39m[90m [39m22:01 - 22:04[90m [39m🚶 [90mWALK[39m [90m [39m   [90m [39m->[90m [39mKapteeninpuistikko
+[94m  |[39m[90m [39m22:04 - 22:10[90m [39m🚌 [94mBUS[39m  [90m [39m24 [90m [39m->[90m [39mLasipalatsi       
+[90m  |[39m[90m [39m22:10 - 22:13[90m [39m🚶 [90mWALK[39m [90m [39m   [90m [39m->[90m [39mRautatientori     
+[33m  |[39m[90m [39m22:16 - 22:33[90m [39m🚇 [33mMETRO[39m[90m [39mM1 [90m [39m->[90m [39mNiittykumpu       
+[90m  |[39m[90m [39m22:33 - 22:39[90m [39m🚶 [90mWALK[39m [90m [39m   [90m [39m->[90m [39mNiittykumpu (M)   
+[94m  |[39m[90m [39m22:49 - 22:52[90m [39m🚌 [94mBUS[39m  [90m [39m118[90m [39m->[90m [39mParolantie        
+[90m  |[39m[90m [39m22:52 - 22:56[90m [39m🚶 [90mWALK[39m [90m [39m   [90m [39m->[90m [39mDestination       "
+`;
+
+exports[`getRowByLeg should return row containing route leg information 1`] = `
+Array [
+  "[90m  |[39m",
+  "22:01 - 22:04",
+  "🚶 [90mWALK[39m",
+  "",
+  "->",
+  "Kapteeninpuistikko",
+]
+`;
+
+exports[`getRowProps should return correct row props with WALK 1`] = `
+Object {
+  "color": [Function],
+  "emoji": "🚶",
+  "name": "WALK",
+}
+`;
+
+exports[`getRowProps should return default row props with ASDF 1`] = `
+Object {
+  "color": [Function],
+  "emoji": "🤷",
+  "name": "ASDF",
+}
+`;
+
+exports[`getTripRow should return row containing trip information 1`] = `"Tehtaankatu 24 [90m->[39m Korvatunturi"`;

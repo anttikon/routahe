@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createQuery should return matching query 1`] = `
+Object {
+  "query": "{plan(from:{label:\\"Tehtaankatu 24, Helsinki\\",lon:24.944215,lat:60.158061},to:{label:\\"Koirapuisto, Vanha-Mankkaa, Espoo\\",lon:24.762577,lat:60.181903},dateTime:\\"2019-04-23T18:50:50.079Z\\"){itineraries{duration,legs{startTime,endTime,duration,distance,mode,from{name},to{name},route{shortName}}}}}",
+}
+`;
+
+exports[`formatQueryBody should return formatted query matching to given body with arriveBy 1`] = `
+Object {
+  "arriveBy": true,
+  "date": "2019-04-23",
+  "from": Object {
+    "lat": 60.158061,
+    "lon": 24.944215,
+  },
+  "numItineraries": 3,
+  "time": "21:50",
+  "to": Object {
+    "lat": 60.181903,
+    "lon": 24.762577,
+  },
+}
+`;
+
+exports[`formatQueryBody should return formatted query matching to given body without arriveBy 1`] = `
+Object {
+  "arriveBy": undefined,
+  "date": "2019-04-23",
+  "from": Object {
+    "lat": 60.158061,
+    "lon": 24.944215,
+  },
+  "numItineraries": 3,
+  "time": "21:50",
+  "to": Object {
+    "lat": 60.181903,
+    "lon": 24.762577,
+  },
+}
+`;
+
+exports[`jsonToParameters should return matching graphql parameters with defined arriveBy 1`] = `"(numItineraries:3,from:{lat:60.158061,lon:24.944215},to:{lat:60.181903,lon:24.762577},date:\\"2019-04-23\\",time:\\"21:55\\",arriveBy:true)"`;
+
+exports[`jsonToParameters should return matching graphql parameters with undefined arriveBy 1`] = `"(numItineraries:3,from:{lat:60.158061,lon:24.944215},to:{lat:60.181903,lon:24.762577},date:\\"2019-04-23\\",time:\\"21:55\\")"`;
+
+exports[`jsonToSchema should return matching graphql schema 1`] = `"{itineraries{duration,legs{startTime,endTime,duration,distance,mode,from{name},to{name},route{shortName}}}}"`;
