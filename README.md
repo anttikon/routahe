@@ -1,6 +1,6 @@
 ## routahe
 
-This is command line [reittiopas](http://www.reittiopas.fi/en/) client for lazy atk people.
+This is a command line [reittiopas](http://www.reittiopas.fi/en/) client for lazy atk people.
 
 ![](https://raw.githubusercontent.com/anttikon/routahe/master/misc/routahe.png)
 
