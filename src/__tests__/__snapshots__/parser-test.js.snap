@@ -3,7 +3,7 @@
 exports[`parseArguments should parse arguments with format: date time from to 1`] = `
 Object {
   "date": "8.8.",
-  "dateTime": "2019-04-23T18:00:00.000Z",
+  "dateTime": "2019-08-08T18:00:00.000Z",
   "from": "Tehtaankatu 24",
   "time": "21:00",
   "to": "Koirapuisto",
@@ -13,7 +13,7 @@ Object {
 exports[`parseArguments should parse arguments with format: from to date time 1`] = `
 Object {
   "date": "8.8.",
-  "dateTime": "2019-04-23T18:00:00.000Z",
+  "dateTime": "2019-08-08T18:00:00.000Z",
   "from": "Tehtaankatu 24",
   "time": "21:00",
   "to": "Koirapuisto",
@@ -23,7 +23,7 @@ Object {
 exports[`parseArguments should parse arguments with format: from to time date 1`] = `
 Object {
   "date": "8.8.",
-  "dateTime": "2019-04-23T18:00:00.000Z",
+  "dateTime": "2019-08-08T18:00:00.000Z",
   "from": "Tehtaankatu 24",
   "time": "21:00",
   "to": "Koirapuisto",
@@ -33,7 +33,7 @@ Object {
 exports[`parseArguments should parse arguments with format: time date from to 1`] = `
 Object {
   "date": "8.8.",
-  "dateTime": "2019-04-23T18:00:00.000Z",
+  "dateTime": "2019-08-08T18:00:00.000Z",
   "from": "Tehtaankatu 24",
   "time": "21:00",
   "to": "Koirapuisto",

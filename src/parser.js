@@ -9,6 +9,7 @@ const dateParseFormats = [
   'DD.M.',
   'DD.M',
   'D.M',
+  'D.M.',
   'D.MM',
   'D.MM.',
   'D.M.YYYY',
