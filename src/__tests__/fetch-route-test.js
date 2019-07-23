@@ -50,7 +50,7 @@ describe('jsonToSchema', () => {
 describe('jsonToParameters', () => {
   it('should return matching graphql parameters with undefined arriveBy', () => {
     const jsonParams = {
-      numItineraries: 3,
+      numItineraries: 5,
       from: { lat: 60.158061, lon: 24.944215 },
       to: { lat: 60.181903, lon: 24.762577 },
       date: '2019-04-23',
@@ -63,7 +63,7 @@ describe('jsonToParameters', () => {
 
   it('should return matching graphql parameters with defined arriveBy', () => {
     const jsonParams = {
-      numItineraries: 3,
+      numItineraries: 5,
       from: { lat: 60.158061, lon: 24.944215 },
       to: { lat: 60.181903, lon: 24.762577 },
       date: '2019-04-23',

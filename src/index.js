@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import program from 'commander'
 import { parseArguments } from './parser'
 import { getLocationByQuery } from './location'
 
@@ -48,11 +47,11 @@ function printHelp() {
   console.log('')
 }
 
-program.on('--help', () => printHelp())
+const { 2: arg1, 3: arg2, 4: arg3, 5: arg4 } = process.argv
 
-program
-  .arguments('[arg1] [arg2] [arg3] [arg4]')
-  .action((arg1, arg2, arg3, arg4) =>
-    action(parseArguments([arg1, arg2, arg3, arg4])).catch(e => console.log('Error with action', e))
-  )
-  .parse(process.argv)
+if (arg1 === '--help') {
+  printHelp()
+} else {
+  const args = parseArguments([arg1, arg2, arg3, arg4])
+  action(args).catch(e => console.error('Error with action', e))
+}

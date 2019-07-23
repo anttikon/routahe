@@ -17,7 +17,7 @@ const querySchema = {
   },
 }
 
-const defaultBody = { numItineraries: 3 }
+const defaultBody = { numItineraries: 5 }
 
 const fromAndToBody = ({ from, to }) => ({
   from: { lat: from.lat, lon: from.lon },
