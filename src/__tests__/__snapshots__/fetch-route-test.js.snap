@@ -14,7 +14,7 @@ Object {
     "lat": 60.158061,
     "lon": 24.944215,
   },
-  "numItineraries": 3,
+  "numItineraries": 5,
   "time": "21:50",
   "to": Object {
     "lat": 60.181903,
@@ -31,7 +31,7 @@ Object {
     "lat": 60.158061,
     "lon": 24.944215,
   },
-  "numItineraries": 3,
+  "numItineraries": 5,
   "time": "21:50",
   "to": Object {
     "lat": 60.181903,
@@ -40,8 +40,8 @@ Object {
 }
 `;
 
-exports[`jsonToParameters should return matching graphql parameters with defined arriveBy 1`] = `"(numItineraries:3,from:{lat:60.158061,lon:24.944215},to:{lat:60.181903,lon:24.762577},date:\\"2019-04-23\\",time:\\"21:55\\",arriveBy:true)"`;
+exports[`jsonToParameters should return matching graphql parameters with defined arriveBy 1`] = `"(numItineraries:5,from:{lat:60.158061,lon:24.944215},to:{lat:60.181903,lon:24.762577},date:\\"2019-04-23\\",time:\\"21:55\\",arriveBy:true)"`;
 
-exports[`jsonToParameters should return matching graphql parameters with undefined arriveBy 1`] = `"(numItineraries:3,from:{lat:60.158061,lon:24.944215},to:{lat:60.181903,lon:24.762577},date:\\"2019-04-23\\",time:\\"21:55\\")"`;
+exports[`jsonToParameters should return matching graphql parameters with undefined arriveBy 1`] = `"(numItineraries:5,from:{lat:60.158061,lon:24.944215},to:{lat:60.181903,lon:24.762577},date:\\"2019-04-23\\",time:\\"21:55\\")"`;
 
 exports[`jsonToSchema should return matching graphql schema 1`] = `"{itineraries{duration,legs{startTime,endTime,duration,distance,mode,from{name},to{name},route{shortName}}}}"`;
