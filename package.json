@@ -17,9 +17,10 @@
   },
   "scripts": {
     "dev": "babel-node src/index.js",
-    "compile": "npm run prettier-check && npm run test && babel ./src -d build && node build/index",
+    "compile": "npm run prettier-check && npm run test && npm run build && node build/index",
     "prepublish": "npm run compile",
     "test": "jest",
+    "build": "babel src --out-dir build --ignore '**/__tests__'",
     "prettier-check": "prettier --check \"src/**/*.js\"",
     "prettier-write": "prettier --write \"src/**/*.js\""
   },
