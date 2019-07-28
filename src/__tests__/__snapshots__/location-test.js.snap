@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`mapFeature should return {label, lon, lat} 1`] = `
-Object {
-  "label": "Tehtaankatu 24, Helsinki",
-  "lat": 60.158048,
-  "lon": 24.943871,
-}
-`;

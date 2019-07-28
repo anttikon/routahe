@@ -1,6 +1,6 @@
 {
   "name": "routahe",
-  "version": "0.2.12",
+  "version": "0.2.13",
   "main": "index.js",
   "license": "MIT",
   "author": "Antti Kontoniemi",
@@ -17,12 +17,10 @@
   },
   "scripts": {
     "dev": "babel-node src/index.js",
-    "compile": "npm run prettier-check && npm run test && npm run build && node build/index",
+    "compile": "npm run test && npm run build",
     "prepublish": "npm run compile",
     "test": "jest",
-    "build": "babel src --out-dir build --ignore '**/__tests__'",
-    "prettier-check": "prettier --check \"src/**/*.js\"",
-    "prettier-write": "prettier --write \"src/**/*.js\""
+    "build": "babel src --out-dir build --ignore '**/__tests__'"
   },
   "bin": {
     "routahe": "./build/index.js"
@@ -34,7 +32,6 @@
     "@babel/runtime": "^7.5.5",
     "chalk": "^2.4.2",
     "cli-table": "^0.3.1",
-    "lodash": "^4.17.15",
     "moment": "^2.24.0",
     "node-fetch": "^2.6.0"
   },
@@ -42,9 +39,10 @@
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
     "@babel/node": "^7.5.5",
+    "@babel/plugin-proposal-optional-chaining": "^7.2.0",
+    "@babel/plugin-proposal-pipeline-operator": "^7.5.0",
     "@babel/plugin-transform-runtime": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
-    "jest": "^24.8.0",
-    "prettier": "^1.18.2"
+    "jest": "^24.8.0"
   }
 }

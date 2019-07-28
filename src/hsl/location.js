@@ -1,7 +1,7 @@
 import fetch from 'node-fetch'
 import querystring from 'querystring'
 
-async function getHslLocations(query) {
+const getHslLocations = async (query) => {
   const params = {
     text: encodeURIComponent(query),
     'boundary.rect.min_lat': 59.9,
@@ -13,16 +13,13 @@ async function getHslLocations(query) {
   return response.json()
 }
 
-export const mapFeature = feature => {
+const mapFeature = feature => {
   const [lon, lat] = feature.geometry.coordinates
   const label = feature.properties.label
   return { label, lon, lat }
 }
 
-export const getLocationByQuery = async query => {
+export const getLocationByString = async query => {
   const hslLocations = await getHslLocations(query)
-  if (!hslLocations.features) {
-    return {}
-  }
-  return hslLocations.features.map(mapFeature)[0]
+  return hslLocations.features ? hslLocations.features.map(mapFeature)[0] : null
 }

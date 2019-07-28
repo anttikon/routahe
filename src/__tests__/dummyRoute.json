@@ -1,0 +1,269 @@
+[
+  {
+    "duration": 5767,
+    "legs": [
+      {
+        "startTime": 1564466044000,
+        "endTime": 1564466340000,
+        "duration": 296,
+        "distance": 335.149,
+        "mode": "WALK",
+        "from": {
+          "name": "Origin"
+        },
+        "to": {
+          "name": "Kamppi"
+        },
+        "route": null
+      },
+      {
+        "startTime": 1564466340000,
+        "endTime": 1564467480000,
+        "duration": 1140,
+        "distance": 13174.583647316482,
+        "mode": "SUBWAY",
+        "from": {
+          "name": "Kamppi"
+        },
+        "to": {
+          "name": "Matinkylä"
+        },
+        "route": {
+          "shortName": "M1"
+        }
+      },
+      {
+        "startTime": 1564467480000,
+        "endTime": 1564467662000,
+        "duration": 182,
+        "distance": 235.61599999999996,
+        "mode": "WALK",
+        "from": {
+          "name": "Matinkylä"
+        },
+        "to": {
+          "name": "Matinkylä (M)"
+        },
+        "route": null
+      },
+      {
+        "startTime": 1564467840000,
+        "endTime": 1564468860000,
+        "duration": 1020,
+        "distance": 8325.595641822147,
+        "mode": "BUS",
+        "from": {
+          "name": "Matinkylä (M)"
+        },
+        "to": {
+          "name": "Suinonsalmi"
+        },
+        "route": {
+          "shortName": "145"
+        }
+      },
+      {
+        "startTime": 1564468860000,
+        "endTime": 1564468963000,
+        "duration": 103,
+        "distance": 132.763,
+        "mode": "WALK",
+        "from": {
+          "name": "Suinonsalmi"
+        },
+        "to": {
+          "name": "Suinonsalmen saaristovenelaituri"
+        },
+        "route": null
+      },
+      {
+        "startTime": 1564469700000,
+        "endTime": 1564470900000,
+        "duration": 1200,
+        "distance": 2618.5431255435105,
+        "mode": "FERRY",
+        "from": {
+          "name": "Suinonsalmen saaristovenelaituri"
+        },
+        "to": {
+          "name": "Pentalan saaristovenelaituri"
+        },
+        "route": {
+          "shortName": "Pentalan reitti"
+        }
+      },
+      {
+        "startTime": 1564470900000,
+        "endTime": 1564471811000,
+        "duration": 911,
+        "distance": 1098.432,
+        "mode": "WALK",
+        "from": {
+          "name": "Pentalan saaristovenelaituri"
+        },
+        "to": {
+          "name": "Destination"
+        },
+        "route": null
+      }
+    ]
+  },
+  {
+    "duration": 2211,
+    "legs": [
+      {
+        "startTime": 1564420077000,
+        "endTime": 1564420260000,
+        "duration": 183,
+        "distance": 190.09899999999996,
+        "mode": "WALK",
+        "from": {
+          "name": "Origin"
+        },
+        "to": {
+          "name": "Pasila"
+        },
+        "route": null
+      },
+      {
+        "startTime": 1564420260000,
+        "endTime": 1564420560000,
+        "duration": 300,
+        "distance": 2991.3440698048153,
+        "mode": "RAIL",
+        "from": {
+          "name": "Pasila"
+        },
+        "to": {
+          "name": "Helsinki"
+        },
+        "route": {
+          "shortName": "N"
+        }
+      },
+      {
+        "startTime": 1564420560000,
+        "endTime": 1564420895000,
+        "duration": 335,
+        "distance": 434.322,
+        "mode": "WALK",
+        "from": {
+          "name": "Helsinki"
+        },
+        "to": {
+          "name": "Rautatientori"
+        },
+        "route": null
+      },
+      {
+        "startTime": 1564421040000,
+        "endTime": 1564422240000,
+        "duration": 1200,
+        "distance": 14230.714394214156,
+        "mode": "SUBWAY",
+        "from": {
+          "name": "Rautatientori"
+        },
+        "to": {
+          "name": "Mellunmäki"
+        },
+        "route": {
+          "shortName": "M2"
+        }
+      },
+      {
+        "startTime": 1564422240000,
+        "endTime": 1564422288000,
+        "duration": 48,
+        "distance": 61.784,
+        "mode": "WALK",
+        "from": {
+          "name": "Mellunmäki"
+        },
+        "to": {
+          "name": "Destination"
+        },
+        "route": null
+      }
+    ]
+  },
+  {
+    "duration": 2237,
+    "legs": [
+      {
+        "startTime": 1564420651000,
+        "endTime": 1564420740000,
+        "duration": 89,
+        "distance": 101.744,
+        "mode": "WALK",
+        "from": {
+          "name": "Origin"
+        },
+        "to": {
+          "name": "Pasila"
+        },
+        "route": null
+      },
+      {
+        "startTime": 1564420740000,
+        "endTime": 1564421040000,
+        "duration": 300,
+        "distance": 3173.3937719649334,
+        "mode": "RAIL",
+        "from": {
+          "name": "Pasila"
+        },
+        "to": {
+          "name": "Helsinki"
+        },
+        "route": {
+          "shortName": "Z"
+        }
+      },
+      {
+        "startTime": 1564421040000,
+        "endTime": 1564421245000,
+        "duration": 205,
+        "distance": 265.294,
+        "mode": "WALK",
+        "from": {
+          "name": "Helsinki"
+        },
+        "to": {
+          "name": "Rautatientori"
+        },
+        "route": null
+      },
+      {
+        "startTime": 1564421640000,
+        "endTime": 1564422840000,
+        "duration": 1200,
+        "distance": 14230.714394214156,
+        "mode": "SUBWAY",
+        "from": {
+          "name": "Rautatientori"
+        },
+        "to": {
+          "name": "Mellunmäki"
+        },
+        "route": {
+          "shortName": "M2"
+        }
+      },
+      {
+        "startTime": 1564422840000,
+        "endTime": 1564422888000,
+        "duration": 48,
+        "distance": 61.784,
+        "mode": "WALK",
+        "from": {
+          "name": "Mellunmäki"
+        },
+        "to": {
+          "name": "Destination"
+        },
+        "route": null
+      }
+    ]
+  }
+]

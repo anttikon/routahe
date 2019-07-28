@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`printer printRoutes should print routes 1`] = `
+"
+08:54 - 10:30 96min
+[90m  |[39m 08:54 - 08:59 🚶 [90mWALK[39m                  -> Kamppi                          
+[33m  |[39m 08:59 - 09:18 🚇 [33mMETRO[39m M1              -> Matinkylä                       
+[90m  |[39m 09:18 - 09:21 🚶 [90mWALK[39m                  -> Matinkylä (M)                   
+[94m  |[39m 09:24 - 09:41 🚌 [94mBUS[39m   145             -> Suinonsalmi                     
+[90m  |[39m 09:41 - 09:42 🚶 [90mWALK[39m                  -> Suinonsalmen saaristovenelaituri
+[36m  |[39m 09:55 - 10:15 🚢 [36mFERRY[39m Pentalan reitti -> Pentalan saaristovenelaituri    
+[90m  |[39m 10:15 - 10:30 🚶 [90mWALK[39m                  -> Destination                     
+
+20:07 - 20:44 36min
+[90m  |[39m 20:07 - 20:11 🚶 [90mWALK[39m     -> Pasila       
+[35m  |[39m 20:11 - 20:16 🚅 [35mRAIL[39m  N  -> Helsinki     
+[90m  |[39m 20:16 - 20:21 🚶 [90mWALK[39m     -> Rautatientori
+[33m  |[39m 20:24 - 20:44 🚇 [33mMETRO[39m M2 -> Mellunmäki   
+[90m  |[39m 20:44 - 20:44 🚶 [90mWALK[39m     -> Destination  
+
+20:17 - 20:54 37min
+[90m  |[39m 20:17 - 20:19 🚶 [90mWALK[39m     -> Pasila       
+[35m  |[39m 20:19 - 20:24 🚅 [35mRAIL[39m  Z  -> Helsinki     
+[90m  |[39m 20:24 - 20:27 🚶 [90mWALK[39m     -> Rautatientori
+[33m  |[39m 20:34 - 20:54 🚇 [33mMETRO[39m M2 -> Mellunmäki   
+[90m  |[39m 20:54 - 20:54 🚶 [90mWALK[39m     -> Destination  "
+`;
