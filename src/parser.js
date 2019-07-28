@@ -38,8 +38,6 @@ export const isTime = arg => arg && !!arg.match(/^@?\d{1,2}:\d{2}$/g)
 
 export const isDate = arg => arg && !!arg.match(/^\d{1,2}\.\d{1,2}\.?(\d{4})?$/g)
 
-export const filterUndefined = array => array.filter(obj => !!obj)
-
 export const argsToObject = (args) => args.reduce((acc, arg) => {
   if (isTime(arg)) {
     acc.inputTime = arg

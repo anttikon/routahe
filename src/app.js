@@ -1,10 +1,10 @@
-import { argvToArray, populateDateTime, filterUndefined, argsToObject, validateInput, populateFromTo } from './parser'
+import { argvToArray, populateDateTime, argsToObject, validateInput, populateFromTo } from './parser'
 import { printHelp, printRoutes, printLocations } from './printer'
 import hsl from './hsl'
 
 export const main = async () => {
   const args = argvToArray(process.argv)
-    |> filterUndefined
+    |> #.filter(obj => !!obj)
     |> argsToObject
     |> populateDateTime
     |> populateFromTo
