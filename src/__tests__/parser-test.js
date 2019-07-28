@@ -1,27 +1,4 @@
-import { parseArguments, isDate, isTime } from '../parser'
-
-const from = 'Tehtaankatu 24'
-const to = 'Koirapuisto'
-const date = '8.8.'
-const time = '21:00'
-
-describe('parseArguments', () => {
-  it('should parse arguments with format: from to date time', () => {
-    expect(parseArguments([from, to, date, time])).toMatchSnapshot()
-  })
-
-  it('should parse arguments with format: from to time date', () => {
-    expect(parseArguments([from, to, time, date])).toMatchSnapshot()
-  })
-
-  it('should parse arguments with format: date time from to', () => {
-    expect(parseArguments([date, time, from, to])).toMatchSnapshot()
-  })
-
-  it('should parse arguments with format: time date from to', () => {
-    expect(parseArguments([time, date, from, to])).toMatchSnapshot()
-  })
-})
+import { isDate, isTime } from '../parser'
 
 describe('isDate', () => {
   it('should return true with 1.1', () => {
