@@ -2,15 +2,15 @@ import { argvToArray, populateDateTime, argsToObject, validateInput, populateFro
 import { printHelp, printRoutes, printLocations } from './printer'
 import hsl from './hsl'
 
-export const main = async () => {
-  const args = argvToArray(process.argv)
+export const main = async (argv) => {
+  const args = argvToArray(argv)
     |> #.filter(obj => !!obj)
     |> argsToObject
     |> populateDateTime
     |> populateFromTo
     |> await #
 
-  if (!validateInput(args)) {
+  if (!validateInput(args, argv)) {
     return printHelp()
   }
 

@@ -52,7 +52,7 @@ export const argsToObject = (args) => args.reduce((acc, arg) => {
   return acc
 }, { arriveBy: false })
 
-export const validateInput = (args) => !!(args.inputFrom && args.inputTo && process.argv.length > 2)
+export const validateInput = (args, argv) => !!(args.inputFrom && args.inputTo && argv.length > 2)
 
 export const populateFromTo = async (args) => {
   if (!args.inputFrom || !args.inputTo) {
