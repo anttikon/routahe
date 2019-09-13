@@ -1,7 +1,7 @@
 {
   "name": "routahe",
-  "version": "0.2.14",
-  "main": "index.js",
+  "version": "0.2.15",
+  "main": "build/index.js",
   "license": "MIT",
   "author": "Antti Kontoniemi",
   "keywords": [
@@ -16,14 +16,14 @@
     "url": "https://github.com/anttikon/routahe/issues"
   },
   "scripts": {
-    "dev": "babel-node src/index.js",
+    "dev": "babel-node src/cli.js",
     "compile": "npm run test && npm run build",
     "prepublish": "npm run compile",
     "test": "jest",
     "build": "babel src --out-dir build --ignore '**/__tests__'"
   },
   "bin": {
-    "routahe": "./build/index.js"
+    "routahe": "./build/cli.js"
   },
   "files": [
     "build/"
