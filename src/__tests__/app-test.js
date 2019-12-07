@@ -12,6 +12,16 @@ describe('main', () => {
     expect(routes.length).toEqual(5)
     routes.forEach(route => expect(route.duration).toBeLessThan(fifteenMinutesAsSeconds))
   })
+  it('should be able to return only metro routes from kamppi to steissi', async () => {
+    const argv = [...defaultArgv, '@12:00', 'kamppi', moment().add(1, 'days').format('DD.MM.YYYY'), 'steissi', 'subway']
+    const routes = await main(argv)
+    const fifteenMinutesAsSeconds = 60 * 15
+    expect(routes.length).toEqual(5)
+    routes.forEach(route => {
+      route.legs.forEach(leg => expect(leg.mode).toMatch(/WALK|SUBWAY/))
+      expect(route.duration).toBeLessThan(fifteenMinutesAsSeconds)
+    })
+  })
   it('should print help page if there is no enough of arguments', async () => {
     const printHelpSpy = jest.spyOn(printer, 'printHelp')
     const argv = [...defaultArgv, '@12:00', 'kamppi',]
