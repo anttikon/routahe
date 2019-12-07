@@ -38,19 +38,23 @@ export const isTime = arg => arg && !!arg.match(/^@?\d{1,2}:\d{2}$/g)
 
 export const isDate = arg => arg && !!arg.match(/^\d{1,2}\.\d{1,2}\.?(\d{4})?$/g)
 
+export const isTransport = arg => arg && !!arg.match(/^(rail|bus|tram|ferry|subway)(,(rail|bus|tram|ferry|subway))*$/)
+
 export const argsToObject = (args) => args.reduce((acc, arg) => {
   if (isTime(arg)) {
     acc.inputTime = arg
     acc.arriveBy = arg.startsWith('@')
   } else if (isDate(arg)) {
     acc.inputDate = arg
+  } else if (isTransport(arg)) {
+    acc.transports = arg.toUpperCase().split(',')
   } else if (!acc.inputFrom) {
     acc.inputFrom = arg
   } else if (!acc.inputTo) {
     acc.inputTo = arg
   }
   return acc
-}, { arriveBy: false })
+}, { arriveBy: false, transports: [] })
 
 export const validateInput = (args, argv) => !!(args.inputFrom && args.inputTo && argv.length > 2)
 
@@ -68,6 +72,6 @@ export const populateFromTo = async (args) => {
 }
 
 export const argvToArray = (argv) => {
-  const { 2: arg1, 3: arg2, 4: arg3, 5: arg4 } = argv
-  return [arg1, arg2, arg3, arg4]
+  const { 2: arg1, 3: arg2, 4: arg3, 5: arg4, 6: arg5 } = argv
+  return [arg1, arg2, arg3, arg4, arg5]
 }

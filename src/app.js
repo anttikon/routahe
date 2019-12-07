@@ -4,11 +4,12 @@ import hsl from './hsl'
 
 export const main = async (argv) => {
   const args = argvToArray(argv)
-    |> #.filter(obj => !!obj)
-    |> argsToObject
-    |> populateDateTime
-    |> populateFromTo
-    |> await #
+      |> #.filter(obj => !!obj)
+      |> argsToObject
+      |> populateDateTime
+      |> populateFromTo
+      |> await #
+
 
   if (!validateInput(args, argv)) {
     return printHelp()
@@ -20,7 +21,7 @@ export const main = async (argv) => {
     |> hsl.getRoutesByQuery
     |> await #
 
-  printRoutes(routes)
+    printRoutes(routes)
 
   return routes
 }
