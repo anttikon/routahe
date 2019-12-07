@@ -47,7 +47,7 @@ export const argsToObject = (args) => args.reduce((acc, arg) => {
   } else if (isDate(arg)) {
     acc.inputDate = arg
   } else if (isTransport(arg)) {
-    acc.transports = arg.toUpperCase().split(',')
+    acc.transports = arg.split(',')
   } else if (!acc.inputFrom) {
     acc.inputFrom = arg
   } else if (!acc.inputTo) {

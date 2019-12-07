@@ -6,7 +6,7 @@ export const getQueryFromArgs = (args) => {
   const { arriveBy, dateTime, from, to, transports } = args
   const date = dateTime.format('YYYY-MM-DD')
   const time = dateTime.format('HH:mm')
-  const transportModes = transports.map(t => ({ mode: t }))
+  const transportModes = transports.map(t => ({ mode: t.toUpperCase() }))
   if (transportModes.length > 0) {
     //  All routes require WALK-option
     transportModes.push({ mode: 'WALK' })
