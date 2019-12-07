@@ -22,7 +22,7 @@ export const getRoute = async (opts) => {
   const { from, to } = await populateFromTo({ inputFrom: opts.from, inputTo: opts.to })
   const dateTime = getDateTime(opts)
   const arriveBy = opts.arriveBy || false
-
-  return getQueryFromArgs({ arriveBy, from, to, dateTime })
+  const transports = opts.transports || []
+  return getQueryFromArgs({ arriveBy, from, to, dateTime, transports })
     |> getRoutesByQuery
 }
