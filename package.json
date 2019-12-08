@@ -29,20 +29,20 @@
     "build/"
   ],
   "dependencies": {
-    "@babel/runtime": "^7.5.5",
-    "chalk": "^2.4.2",
+    "@babel/runtime": "^7.7.6",
+    "chalk": "^3.0.0",
     "cli-table": "^0.3.1",
     "moment": "^2.24.0",
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.5.5",
-    "@babel/core": "^7.5.5",
-    "@babel/node": "^7.5.5",
-    "@babel/plugin-proposal-optional-chaining": "^7.2.0",
-    "@babel/plugin-proposal-pipeline-operator": "^7.5.0",
-    "@babel/plugin-transform-runtime": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "jest": "^24.8.0"
+    "@babel/cli": "^7.7.5",
+    "@babel/core": "^7.7.5",
+    "@babel/node": "^7.7.4",
+    "@babel/plugin-proposal-optional-chaining": "^7.7.5",
+    "@babel/plugin-proposal-pipeline-operator": "^7.7.4",
+    "@babel/plugin-transform-runtime": "^7.7.6",
+    "@babel/preset-env": "^7.7.6",
+    "jest": "^24.9.0"
   }
 }
