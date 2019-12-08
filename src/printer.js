@@ -36,7 +36,7 @@ const getRowProps = mode => {
     case 'TRAM':
       return { emoji: String.fromCodePoint(0x1f683), color: green, name: mode }
     case 'SUBWAY':
-      return { emoji: String.fromCodePoint(0x1f687), color: yellow, name: 'METRO' }
+      return { emoji: String.fromCodePoint(0x1f687), color: yellow, name: mode }
     case 'FERRY':
       return { emoji: String.fromCodePoint(0x1f6a2), color: cyan, name: mode }
     default:
