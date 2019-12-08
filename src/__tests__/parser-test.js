@@ -45,26 +45,6 @@ describe('isTime', () => {
     expect(isTime()).toBeFalsy()
   })
 })
-describe('isTime', () => {
-  it('should return true with 00:00', () => {
-    expect(isTime('00:00')).toBeTruthy()
-  })
-  it('should return true with 0:00', () => {
-    expect(isTime('0:00')).toBeTruthy()
-  })
-  it('should return true with 23:59', () => {
-    expect(isTime('23:59')).toBeTruthy()
-  })
-  it('should return false with 23:59:', () => {
-    expect(isTime('23:59:')).toBeFalsy()
-  })
-  it('should return false with asdf', () => {
-    expect(isTime('asdf')).toBeFalsy()
-  })
-  it('should return false with undefined', () => {
-    expect(isTime()).toBeFalsy()
-  })
-})
 
 describe('isTransport', () => {
   it('should accept one parameter: bus', () => {
