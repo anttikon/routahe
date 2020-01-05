@@ -47,6 +47,8 @@ const getRowProps = mode => {
 const getMinAttribute = (array = [], field) => array.reduce((acc, obj) => !acc || acc > obj[field] ? obj[field] : acc, undefined)
 const getMaxAttribute = (array = [], field) => array.reduce((acc, obj) => !acc || acc < obj[field] ? obj[field] : acc, undefined)
 
+export const roundUpToNearest10 = (number) => Math.ceil(Math.round(number) / 10) * 10
+
 const getRouteHeaderRow = route => {
   const startTime = moment(getMinAttribute(route.legs, 'startTime'))
   const endTime = moment(getMaxAttribute(route.legs, 'endTime'))
@@ -60,7 +62,7 @@ const getRouteLegRow = leg => {
     color('  |'),
     `${moment(leg.startTime).format('HH:mm')} - ${moment(leg.endTime).format('HH:mm')}`,
     `${emoji} ${color(name)}`,
-    leg?.route?.shortName || '',
+    leg?.route?.shortName || '' + (leg.mode === 'WALK' ? gray(`${roundUpToNearest10(leg.distance)}m`) : ''),
     '->',
     leg.to.name,
   ]
